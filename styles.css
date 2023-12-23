@@ -12,6 +12,16 @@ body {
   /* max-width: auto; */
 }
 
+h1 {
+  font-size: 60px;
+  text-align: center;
+}
+
+/* h3 {
+  text-transform: uppercase;
+} */
+
+
 header {
   background-image: url(img/bg.img.jpg);
   display: flex;
@@ -54,13 +64,10 @@ header {
   text-decoration: none;
 }
 
-a {
-  transition: text-shadow 0.3s ease-out;
-}
-
 .nav-link:hover {
   color: orange;
   text-shadow: 2px 2px 5px white;
+  transition: text-shadow 0.5s ease-out;
 }
 
 
@@ -71,19 +78,11 @@ a {
   align-items: center; /* Centra los elementos horizontalmente */
   text-align: center;
 }
-
 .home h1 {
   margin-top: 100px;
 }
 
-h1 {
-  font-size: 60px;
-  text-align: center;
-}
 
-h3 {
-  text-transform: uppercase;
-}
 
 .content-profile {
   display: grid;
@@ -108,20 +107,15 @@ h3 {
   font-size: 30px;
   
 }
-
 .introduction span {
   font-weight: bold;
   
 }
 
-
 .cv_button {
-  background-color: orange;
-  color: #003366;
-  text-transform: uppercase;
-}
-
-.cv_button {
+    background-color: orange;
+    color: #003366;
+    text-transform: uppercase;
     font-size: 16px;
     font-weight: bold;
     padding: 10px;
@@ -132,13 +126,10 @@ h3 {
     transition: opacity 0.9s, 0.6s font-size;
     text-align: center;
 }
-
-
 .cv_button:hover,
 .cv_button:focus {
     background-color: #003366;
     cursor: pointer;
-    opacity: 0.8;
     font-size: 18px;
     color: white;
     border-bottom: 2px solid orange;
@@ -157,6 +148,35 @@ h3 {
 .about span {
   font-weight: bold;
 }
+
+/* ----HOBBIES---- */
+.container-hobbies {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  
+}
+.article {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.hobbies {
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+  
+}
+
+.hobbie_content {
+  display: flex;
+}
+
+img {
+  max-width: 70%;
+  height: auto;
+}
+
+
 
 
 /* ---GRID JOBS--- */
@@ -533,5 +553,30 @@ footer {
 .back {
   color: orange;
   text-decoration: none;
+}
+
+/* ----RESPONSIVE---- */
+
+/* Estilos para tamaños de pantalla generales */
+body {
+  font-size: 16px;
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  /* Otros estilos específicos para pantallas más pequeñas */
+}
+
+/* Otra media query para pantallas aún más pequeñas */
+@media (max-width: 576px) {
+  body {
+    font-size: 12px;
+  }
+
+  /* Otros estilos específicos para pantallas aún más pequeñas */
 }
 
