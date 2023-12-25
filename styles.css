@@ -6,20 +6,19 @@ html {
 }
 
 body {
-  background-color: white;
+  background-color: #F5F5F5;
   margin: 0;
+  padding: 0;
   
   /* max-width: auto; */
 }
+
 
 h1 {
   font-size: 60px;
   text-align: center;
 }
 
-/* h3 {
-  text-transform: uppercase;
-} */
 
 
 header {
@@ -43,7 +42,7 @@ header {
 }
 
 .logo a {
-  color: white;
+  color: orange;
   text-decoration: none;
 }
 
@@ -70,6 +69,17 @@ header {
   transition: text-shadow 0.5s ease-out;
 }
 
+/*----BORDER BOX----*/
+.border {
+  background-color: white;
+  -webkit-box-shadow: 2px -1px 67px 14px rgba(142,140,145,1);
+  -moz-box-shadow: 2px -1px 67px 14px rgba(142,140,145,1);
+  box-shadow: 2px -1px 20px 5px rgba(142,140,145,1);
+  border-radius: 10px;
+  padding: 30px;
+  margin-bottom: 50px;
+  }
+
 
 /* Home Section */
 .home {
@@ -77,16 +87,16 @@ header {
   flex-direction: column;
   align-items: center; /* Centra los elementos horizontalmente */
   text-align: center;
+  width: 90%;
+  margin: 150px auto;
 }
 .home h1 {
-  margin-top: 100px;
+  margin-top: 50px;
 }
-
-
 
 .content-profile {
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 1fr 2fr;
   align-items: center;
   width: 80%;
   /* max-width: 1500px; */
@@ -104,7 +114,7 @@ header {
   text-align: center;
   width: 100%;
   padding: 20px;
-  font-size: 30px;
+  font-size: 32px;
   
 }
 .introduction span {
@@ -125,6 +135,7 @@ header {
     border-bottom: 2px solid #003366;
     transition: opacity 0.9s, 0.6s font-size;
     text-align: center;
+    margin-bottom: 15px;
 }
 .cv_button:hover,
 .cv_button:focus {
@@ -140,7 +151,7 @@ header {
 /* ----ABOUT ME---- */
 .about {
   text-align: center;
-  font-size: 25px;
+  font-size: 23px;
   width: 90%;
   margin: 0 auto;
 }
@@ -149,26 +160,35 @@ header {
   font-weight: bold;
 }
 
-/* ----HOBBIES---- */
-.container-hobbies {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  
-}
-.article {
+.careers {
+  text-align: center;
+  font-size: 25px;
   width: 90%;
   margin: 0 auto;
+}
+
+.careers span {
+  font-weight: bold;
+}
+
+.about .border{
+  border: 1px solid #003366 ;
+}
+
+/* ----HOBBIES---- */
+.container-web-hobbies {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+  
 }
 
 .hobbies {
-  display: flex;
-  width: 90%;
-  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
   
-}
-
-.hobbie_content {
-  display: flex;
 }
 
 img {
@@ -203,17 +223,12 @@ img {
   width: 100%;
 }
 
-
-/*----BORDER BOX----*/
-.border {
-background-color: white;
--webkit-box-shadow: 2px -1px 67px 14px rgba(142,140,145,1);
--moz-box-shadow: 2px -1px 67px 14px rgba(142,140,145,1);
-box-shadow: 2px -1px 20px 5px rgba(142,140,145,1);
-border-radius: 10px;
-padding: 20px;
-margin-bottom: 50px;
+.container-careers .border {
+  border: 1px solid #003366;
 }
+
+
+
 
 
 /* ---------- SKILLS ---------- */
@@ -244,10 +259,21 @@ margin-bottom: 50px;
   
 }
 
-.content-skills p {
-  text-align: center;
+
+main .border {
+  border: 1px solid #003366 ;
   
 }
+.container-skills .border {
+  border: 1px solid orange;
+  
+}
+
+.content-skills p {
+  text-align: center;
+
+}
+
 
 
 /* ----TOOL BELT----*/
@@ -400,11 +426,19 @@ margin-bottom: 50px;
 
 .content-project {
   border: 1px solid #003366;
+  border-radius: 5px;
   padding: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+}
+
+.contenedor_projects .border {
+  border: 1px solid #003366;
+}
+.contenedor_projects h1 {
+  margin-top: 100px;
 }
 
 .content-project p {
@@ -486,7 +520,6 @@ footer {
   -ms-flex-direction: column;
   flex-direction: column;
   text-align: center;
-  
 }
 
 .page-footer h2 {
@@ -544,9 +577,11 @@ footer {
   box-shadow: 0 0 15px white;
 }
 
+/* Icono dentro del circulo */
 .icon {
   max-width: 30px;
 }
+
 
 .back {
   color: orange;
@@ -556,42 +591,5 @@ footer {
 /* ----RESPONSIVE---- */
 
 
-@media only screen and (max-width: 767px) {
-  /*Moviles: Estilos para pantallas de hasta 767px de ancho */
-  .projects {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-    text-align: center;
-    width: 70%;
-    margin: 30px auto;
-  }
-}
-/* Media query para pantallas más pequeñas */
-@media only screen and (min-width: 768px) and (max-width: 1023px) {
-  /* Tablets-Vertical: Estilos para pantallas de 768px a 1023px de ancho */
-  .projects {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    text-align: center;
-    width: 70%;
-    margin: 30px auto;
-    
-  }
-}
-
-@media only screen and (min-width: 1024px) and (max-width: 1279px) {
-  /* Tablets-horizontal/Protatiles: Estilos para pantallas de 1024px a 1279px de ancho */
-}
-
-@media only screen and (min-width: 1280px) {
-  /* Pantallas mas grandes: Estilos para pantallas de 1280px o más de ancho */
-}
-
-  /* Otros estilos específicos para pantallas más pequeñas */
-
-
-/* Otra media query para pantallas aún más pequeñas */
 
 
