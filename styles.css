@@ -189,15 +189,13 @@ img {
 .container-careers .content {
   display: grid;
   width: 80%;
-  /* grid-template-columns: 1fr; */
   align-items: center;
   margin: 0 auto;
   gap: 30px;
 }
 
 .container-careers img {
-  width: 70%;
-  height: auto;
+  /* height: auto; */
   margin: 0 auto;
 }
 
@@ -402,7 +400,7 @@ margin-bottom: 50px;
 
 .content-project {
   border: 1px solid #003366;
-  padding: 15px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -557,26 +555,43 @@ footer {
 
 /* ----RESPONSIVE---- */
 
-/* Estilos para tamaños de pantalla generales */
-body {
-  font-size: 16px;
+
+@media only screen and (max-width: 767px) {
+  /*Moviles: Estilos para pantallas de hasta 767px de ancho */
+  .projects {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    text-align: center;
+    width: 70%;
+    margin: 30px auto;
+  }
+}
+/* Media query para pantallas más pequeñas */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  /* Tablets-Vertical: Estilos para pantallas de 768px a 1023px de ancho */
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    text-align: center;
+    width: 70%;
+    margin: 30px auto;
+    
+  }
 }
 
-/* Media query para pantallas más pequeñas */
-@media (max-width: 768px) {
-  body {
-    font-size: 14px;
-  }
+@media only screen and (min-width: 1024px) and (max-width: 1279px) {
+  /* Tablets-horizontal/Protatiles: Estilos para pantallas de 1024px a 1279px de ancho */
+}
+
+@media only screen and (min-width: 1280px) {
+  /* Pantallas mas grandes: Estilos para pantallas de 1280px o más de ancho */
+}
 
   /* Otros estilos específicos para pantallas más pequeñas */
-}
+
 
 /* Otra media query para pantallas aún más pequeñas */
-@media (max-width: 576px) {
-  body {
-    font-size: 12px;
-  }
 
-  /* Otros estilos específicos para pantallas aún más pequeñas */
-}
 
