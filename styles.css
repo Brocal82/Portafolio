@@ -9,17 +9,25 @@ body {
   background-color: #F5F5F5;
   margin: 0;
   padding: 0;
-  
-  /* max-width: auto; */
 }
 
-
-h1 {
+h1, h2 {
   font-size: 60px;
   text-align: center;
+  margin-top: 50px;
 }
 
+h3 {
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #003366;
+  padding-bottom: 5px;
+}
 
+h4 {
+  font-size: 25px;
+}
 
 header {
   background-image: url(img/bg.img.jpg);
@@ -90,20 +98,17 @@ header {
   width: 90%;
   margin: 150px auto;
 }
-.home h1 {
-  margin-top: 50px;
-}
 
 .content-profile {
   display: grid;
   grid-template-columns: 1fr 2fr;
   align-items: center;
-  width: 80%;
-  /* max-width: 1500px; */
+  width: 100%;
+  max-width: 1500px;
 }
 
 .profile-pic {
-  width: 70%;
+  width: 60%;
   height: auto;
   border-radius: 50%;
   margin: 0 auto;
@@ -160,6 +165,45 @@ header {
   font-weight: bold;
 }
 
+.about .border{
+  border: 1px solid #003366 ;
+}
+
+/* ----WHY WEB/HOBBIES---- */
+.container-web-hobbies {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+  gap:  100px;
+}
+
+.container-web-hobbies h3 {
+  border-bottom: none;
+  margin-bottom: 20px;
+}
+
+  
+
+.hobbies {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.hobbie {
+  border: 1px solid orange;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+img {
+  max-width: 70%;
+  height: auto;
+  
+}
+
+
+/* PAST CAREERS */
 .careers {
   text-align: center;
   font-size: 25px;
@@ -170,32 +214,6 @@ header {
 .careers span {
   font-weight: bold;
 }
-
-.about .border{
-  border: 1px solid #003366 ;
-}
-
-/* ----HOBBIES---- */
-.container-web-hobbies {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  align-items: start;
-  
-}
-
-.hobbies {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  
-}
-
-img {
-  max-width: 70%;
-  height: auto;
-}
-
 
 
 
@@ -382,13 +400,7 @@ main .border {
   text-align: center;
 }
 
-.technologies h2 {
-  font-size: 30px;
-  text-align: center;
-  margin-bottom: 10px;
-  border-bottom: 1px solid #003366;
-  padding-bottom: 5px;
-}
+
 
 .list-content {
   list-style: none;
@@ -425,7 +437,8 @@ main .border {
 }
 
 .content-project {
-  border: 1px solid #003366;
+  background-color: white;
+  border: 2px solid #003366;
   border-radius: 5px;
   padding: 10px;
   display: flex;
@@ -437,9 +450,7 @@ main .border {
 .contenedor_projects .border {
   border: 1px solid #003366;
 }
-.contenedor_projects h1 {
-  margin-top: 100px;
-}
+
 
 .content-project p {
   font-size: 20px;
@@ -522,7 +533,7 @@ footer {
   text-align: center;
 }
 
-.page-footer h2 {
+.page-footer h4 {
   color: white;
 }
 
