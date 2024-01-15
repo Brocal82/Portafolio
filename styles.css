@@ -324,7 +324,7 @@ main .border {
   margin: 70px auto;
   overflow: hidden;
   position: relative;
-  width: 90%;
+  width: 100%;
 }
 
 .tools-slider::before,
