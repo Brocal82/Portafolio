@@ -651,6 +651,10 @@ footer {
     
   }
 
+  .hobbies {
+    grid-template-columns: 1fr;
+  }
+
   .container-careers {
     grid-template-columns: 1fr;
   }
