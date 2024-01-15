@@ -618,7 +618,7 @@ footer {
   }
 
   .profile-pic {
-    width: 35%;
+    width: 40%;
   }
 
   .border {
@@ -666,6 +666,11 @@ footer {
 
   .projects {
     grid-template-columns: 1fr;
+    width: 90%;
+  }
+
+  .content-project p {
+    font-size: 16px;
   }
 
   .technologies {
