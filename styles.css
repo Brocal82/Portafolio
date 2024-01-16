@@ -14,7 +14,11 @@ body {
 h1, h2 {
   font-size: 55px;
   text-align: center;
-  margin-top: 50px;
+  /* margin-top: 35px; */
+  margin-bottom: 5px;
+  border-bottom: 1px solid #003366;
+  width: 90%;
+  margin: 25px auto;
 }
 
 h3 {
@@ -27,6 +31,7 @@ h3 {
 
 h4 {
   font-size: 25px;
+  border-bottom: 1px solid #003366;
 }
 
 header {
@@ -84,7 +89,7 @@ header {
   -moz-box-shadow: 2px -1px 67px 14px rgba(142,140,145,1);
   box-shadow: 2px -1px 20px 5px rgba(142,140,145,1);
   border-radius: 10px;
-  /* margin-bottom: 50px; */
+  margin-bottom: 50px;
   }
 
 
@@ -174,13 +179,16 @@ header {
 .container-web-hobbies {
   display: grid;
   width: 100%;
-  grid-template-columns: 1fr 1fr;
-  gap:  100px;
+  grid-template-columns: 1fr;
+  gap:  50px;
+  margin-top: 50px;
+  
+
 }
 
 .container-web-hobbies h3 {
   border-bottom: none;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 }
 
   
@@ -190,6 +198,7 @@ header {
   grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
+
 
 .hobbie {
   padding: 15px;
@@ -229,7 +238,7 @@ img {
   width: 80%;
   align-items: center;
   margin: 0 auto;
-  gap: 30px;
+  gap: 15px;
 }
 
 .container-careers img {
@@ -262,7 +271,7 @@ img {
 .container-skills {
   align-items: center;
   width: 100%;
-  margin: 0 auto;
+  /* margin: 0 auto; */
 }
 
 .content-skills {
@@ -273,12 +282,12 @@ img {
   align-items: stretch;
   width: 100%;
   margin: 0 auto;
-  font-size: 25px;
+  font-size: 20px;
   
 }
 
 main .border {
-  border: 1px solid #003366 ;
+  border: 1px solid orange ;
   
 }
 .container-skills .border {
@@ -289,6 +298,7 @@ main .border {
 .content-skills p {
   text-align: center;
   padding: 20px;
+  
 
 }
 
@@ -432,7 +442,7 @@ main .border {
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   text-align: center;
-  width: 70%;
+  width: 90%;
   margin: 30px auto;
 }
 
@@ -602,7 +612,61 @@ footer {
 
 /* ----RESPONSIVE---- */
 /*--Mobile--*/
-@media (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
+
+  h1, h2 {
+    font-size: 30px;
+  }
+
+  h3 {
+    font-size: 27px;
+  }
+
+  h4 {
+    font-size: 25px;
+  }
+
+  p {
+    font-size: 22px;
+  }
+
+  .profile-pic {
+    width: 50%;
+  }
+
+  .container-web-hobbies {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    
+  }
+
+  .container-careers {
+    grid-template-columns: 1fr;
+  }
+
+  .content-skills {
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+  } 
+
+  .technologies {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .projects {
+    grid-template-columns: 1fr 1fr;
+    width: 90%;
+  }
+
+  .hobbies {
+    grid-template-columns: 1fr;
+  }
+
+
+  
+}
+
+@media only screen and (max-width: 768px) {
   header {
     display: flex;
     flex-direction: column;
@@ -678,6 +742,7 @@ footer {
   }
 
 }
+
 
 
 
