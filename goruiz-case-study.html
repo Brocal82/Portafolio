@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Case study: Ambulancias GoRuiz — production B2B platform for ambulance operations. Full-stack: React, TypeScript, Node.js, React Native.">
+  <title>Case study · Ambulancias GoRuiz | Antonio Ruiz Brocal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo"><a href="index.html">Antonio Ruiz Brocal</a></div>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Open menu">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <nav class="main-nav" id="main-nav">
+        <ul>
+          <li><a href="index.html#proyectos" class="nav-link">Work</a></li>
+          <li><a href="index.html#about_me" class="nav-link">About</a></li>
+          <li><a href="index.html#contacto" class="nav-link nav-link-cta">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="case-study-page">
+    <article class="section-inner case-study-article">
+      <p class="section-label">Case study</p>
+      <header class="case-study-header">
+        <h1>Ambulancias GoRuiz</h1>
+        <p class="case-study-lead">
+          Production B2B platform for ambulance and medical transport operations — built end to end as sole developer.
+          Private repository; screenshots and overview shared on request.
+        </p>
+        <div class="project-badges">
+          <span class="project-type">Production</span>
+          <span class="project-type project-type-muted">Private</span>
+          <span class="project-type project-type-muted">Sole developer</span>
+        </div>
+      </header>
+
+      <section class="case-study-section">
+        <h2>Context</h2>
+        <p>
+          I work as a paramedic in Berlin and built GoRuiz outside my clinical shifts. I know the domain from daily
+          operations: shift planning, worker availability, documents, and the gap between office tools and what crews
+          need in the field. The goal was a single system — not a demo — that admins and field staff would use every week.
+        </p>
+      </section>
+
+      <section class="case-study-section">
+        <h2>Problem</h2>
+        <ul class="case-study-list">
+          <li>Scheduling and worker data spread across spreadsheets, messages and ad-hoc tools</li>
+          <li>Office staff and field crews without a shared, up-to-date view of shifts and requests</li>
+          <li>Sensitive documents (contracts, certificates) needing role-based access, not public links</li>
+        </ul>
+      </section>
+
+      <section class="case-study-section">
+        <h2>What I built</h2>
+        <div class="case-study-grid">
+          <div class="case-study-card">
+            <h3>Admin web app</h3>
+            <p>Dashboard, worker management, scheduling (Dienstplan), company settings — React + TypeScript.</p>
+          </div>
+          <div class="case-study-card">
+            <h3>Worker web portal</h3>
+            <p>Browser access for staff who do not use the mobile app — same API, role-scoped data.</p>
+          </div>
+          <div class="case-study-card">
+            <h3>Field mobile app</h3>
+            <p>React Native (Expo): shifts, workday, documents, messages — for crews on the road.</p>
+          </div>
+          <div class="case-study-card">
+            <h3>Shared backend</h3>
+            <p>Node.js / Express REST API, MongoDB, JWT auth, multi-tenant <code>companyId</code> scoping.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-study-section">
+        <h2>Architecture (high level)</h2>
+        <pre class="case-study-diagram" aria-label="Architecture diagram">┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐
+│  Admin web      │  │  Worker web     │  │  Mobile app     │
+│  React + TS     │  │  React + TS     │  │  React Native   │
+└────────┬────────┘  └────────┬────────┘  └────────┬────────┘
+         │                    │                    │
+         └────────────────────┼────────────────────┘
+                              │  REST · JWT
+                    ┌─────────▼─────────┐
+                    │  Node.js / Express │
+                    │  MongoDB           │
+                    │  Multi-tenant      │
+                    └───────────────────┘</pre>
+        <p>
+          Three clients consume one API. Authentication and tenant isolation are enforced in the service layer —
+          not only at the route — including legacy records where <code>companyId</code> may be null.
+        </p>
+      </section>
+
+      <section class="case-study-section">
+        <h2>Key technical decisions</h2>
+        <ul class="case-study-list">
+          <li><strong>Multi-tenant from the start</strong> — each ambulance company scoped by <code>companyId</code>; admin operations always tenant-aware.</li>
+          <li><strong>One API for web + mobile</strong> — avoids duplicate business logic and keeps mobile in sync with office tools.</li>
+          <li><strong>JWT + role-based access</strong> — separate admin vs worker capabilities; documents served through authenticated routes, not public uploads.</li>
+          <li><strong>i18n (DE / EN / ES)</strong> — UI and content for mixed-language teams common in Berlin operations.</li>
+          <li><strong>CI with GitHub Actions + Docker</strong> — typecheck, tests and consistent MongoDB in pipeline before merge.</li>
+          <li><strong>AI-assisted workflow</strong> — Cursor, Claude, MCPs for speed on boilerplate; architecture and production code reviewed manually.</li>
+        </ul>
+      </section>
+
+      <section class="case-study-section">
+        <h2>Challenges</h2>
+        <ul class="case-study-list">
+          <li>Designing scheduling UX that office admins can trust and adjust quickly</li>
+          <li>Keeping mobile useful with intermittent connectivity and simple day-to-day flows</li>
+          <li>Maintaining security boundaries for medical/HR documents across roles and tenants</li>
+          <li>Shipping incrementally while working full-time as a paramedic — small, reviewable changes over big rewrites</li>
+        </ul>
+      </section>
+
+      <section class="case-study-section">
+        <h2>Outcome</h2>
+        <p>
+          A live platform used for real operations: one place for planning, worker data and field access.
+          The codebase is structured for a small team to extend — clear module boundaries, typed clients,
+          and delivery habits (Git, CI, review) that match how I would work in a product team.
+        </p>
+        <p class="case-study-note">
+          Code and live access are private. I can walk through architecture, screenshots and technical decisions in an interview or call.
+        </p>
+      </section>
+
+      <section class="case-study-section">
+        <h2>Stack</h2>
+        <ul class="stack-tags stack-tags-sm">
+          <li>React</li><li>TypeScript</li><li>Node.js</li><li>Express</li><li>MongoDB</li>
+          <li>JWT</li><li>React Native</li><li>Expo</li><li>Git</li><li>GitHub Actions</li><li>Docker</li>
+        </ul>
+      </section>
+
+      <div class="case-study-actions">
+        <a href="index.html#contacto" class="btn btn-primary btn-project">
+          <span>Request overview</span>
+          <svg class="btn-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+        <a href="index.html#proyectos" class="btn btn-secondary btn-project">Back to portfolio</a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="page-footer case-study-footer">
+    <div class="section-inner">
+      <p class="footer-copy">&copy; 2026 Antonio Ruiz Brocal · <a class="back" href="index.html">Portfolio</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
