@@ -1,0 +1,146 @@
+/* Toolbar for CV / cover letter web versions — hidden when printing */
+.doc-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 0.875rem 1rem;
+  background: rgba(248, 250, 252, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #e2e8f0;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
+}
+
+.doc-toolbar-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  width: min(100%, 210mm);
+  margin-inline: auto;
+}
+
+.doc-toolbar-label {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #64748b;
+  letter-spacing: 0.02em;
+}
+
+.doc-toolbar-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.doc-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4375rem;
+  min-height: 2.625rem;
+  padding: 0.5rem 1rem;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  border-radius: 0.625rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease,
+    color 0.2s ease;
+}
+
+.doc-btn svg {
+  flex-shrink: 0;
+  width: 1rem;
+  height: 1rem;
+}
+
+.doc-btn:hover,
+.doc-btn:focus-visible {
+  transform: translateY(-1px);
+}
+
+.doc-btn-ghost {
+  color: #334155;
+  background: #fff;
+  border-color: #e2e8f0;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+
+.doc-btn-ghost:hover,
+.doc-btn-ghost:focus-visible {
+  color: #0f172a;
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+}
+
+.doc-btn-secondary {
+  color: #0f172a;
+  background: #fff;
+  border-color: #cbd5e1;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+
+.doc-btn-secondary:hover,
+.doc-btn-secondary:focus-visible {
+  border-color: #334155;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.1);
+}
+
+.doc-btn-primary {
+  color: #fff;
+  background: linear-gradient(180deg, #0f9a8e 0%, #0d9488 50%, #0f766e 100%);
+  border-color: rgba(15, 118, 110, 0.35);
+  box-shadow: 0 4px 16px rgba(13, 148, 136, 0.28);
+}
+
+.doc-btn-primary:hover,
+.doc-btn-primary:focus-visible {
+  box-shadow: 0 8px 22px rgba(13, 148, 136, 0.35);
+}
+
+.doc-toolbar-hint {
+  width: min(100%, 210mm);
+  margin: 0.5rem auto 0;
+  padding: 0 0.25rem;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 0.6875rem;
+  color: #94a3b8;
+  text-align: right;
+}
+
+@media (max-width: 520px) {
+  .doc-toolbar-inner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .doc-toolbar-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .doc-btn {
+    width: 100%;
+  }
+
+  .doc-toolbar-hint {
+    text-align: center;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}

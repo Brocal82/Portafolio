@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="cv-toolbar.css">
   <style>
     :root {
       --ink: #0f172a;
@@ -201,34 +202,28 @@
     }
 
     @page { size: A4; margin: 12mm; }
-
-    .print-bar {
-      width: 210mm;
-      margin: 8mm auto 0;
-      text-align: center;
-      font-size: 9pt;
-      color: var(--muted);
-    }
-
-    .print-bar button {
-      font: inherit;
-      font-weight: 600;
-      padding: 8px 16px;
-      border-radius: 8px;
-      border: 1px solid var(--line);
-      background: #fff;
-      cursor: pointer;
-    }
   </style>
 </head>
 <body>
-  <p class="print-bar no-print">
-    <button type="button" onclick="window.print()">Save as PDF (Print → Save as PDF)</button>
-    ·
-    <a href="Antonio-Ruiz-Brocal-CV-2026.pdf" download="Antonio-Ruiz-Brocal-CV-2026.pdf">Download latest PDF</a>
-    ·
-    <a href="../index.html">Back to portfolio</a>
-  </p>
+  <nav class="doc-toolbar no-print" aria-label="CV actions">
+    <div class="doc-toolbar-inner">
+      <a class="doc-btn doc-btn-ghost" href="../index.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+        <span>Back to portfolio</span>
+      </a>
+      <div class="doc-toolbar-actions">
+        <a class="doc-btn doc-btn-secondary" href="Antonio-Ruiz-Brocal-CV-2026.pdf" download="Antonio-Ruiz-Brocal-CV-2026.pdf">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+          <span>Download PDF</span>
+        </a>
+        <button type="button" class="doc-btn doc-btn-primary" onclick="window.print()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect width="12" height="8" x="6" y="14"/></svg>
+          <span>Save as PDF</span>
+        </button>
+      </div>
+    </div>
+    <p class="doc-toolbar-hint">Tip: in the print dialog, choose “Save as PDF”.</p>
+  </nav>
 
   <article class="page">
     <header>
