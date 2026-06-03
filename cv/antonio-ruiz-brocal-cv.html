@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Antonio Ruiz Brocal — CV</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #0f172a;
+      --muted: #475569;
+      --accent: #0d9488;
+      --line: #e2e8f0;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, sans-serif;
+      font-size: 9.75pt;
+      line-height: 1.45;
+      color: var(--ink);
+      background: #f1f5f9;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 12mm auto;
+      padding: 14mm 16mm;
+      background: #fff;
+      box-shadow: 0 8px 32px rgba(15, 23, 42, 0.08);
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      gap: 12mm;
+      padding-bottom: 5mm;
+      border-bottom: 2px solid var(--ink);
+      margin-bottom: 5mm;
+    }
+
+    h1 {
+      margin: 0 0 1mm;
+      font-size: 20pt;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .headline {
+      margin: 0;
+      font-size: 11pt;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .contact {
+      text-align: right;
+      font-size: 8.5pt;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .contact a {
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .summary {
+      margin: 0 0 5mm;
+      color: var(--muted);
+      font-size: 9.5pt;
+      max-width: 100%;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 68mm 1fr;
+      gap: 8mm;
+    }
+
+    h2 {
+      margin: 0 0 2.5mm;
+      font-size: 8.5pt;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    section { margin-bottom: 5mm; }
+
+    section:last-child { margin-bottom: 0; }
+
+    .sidebar section + section {
+      padding-top: 4mm;
+      border-top: 1px solid var(--line);
+    }
+
+    ul.plain {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .skill-group { margin-bottom: 2.5mm; }
+
+    .skill-group strong {
+      display: block;
+      font-size: 8pt;
+      margin-bottom: 0.5mm;
+      color: var(--ink);
+    }
+
+    .skill-group span {
+      color: var(--muted);
+      font-size: 8.75pt;
+    }
+
+    .lang li {
+      display: flex;
+      justify-content: space-between;
+      gap: 4mm;
+      margin-bottom: 1mm;
+      font-size: 8.75pt;
+    }
+
+    .lang li span:last-child { color: var(--muted); }
+
+    .job, .project {
+      margin-bottom: 4mm;
+    }
+
+    .job:last-child, .project:last-child { margin-bottom: 0; }
+
+    .job-head, .project-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 4mm;
+      align-items: baseline;
+      margin-bottom: 1mm;
+    }
+
+    .job-head strong, .project-head strong {
+      font-size: 10pt;
+    }
+
+    .when {
+      font-size: 8.25pt;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .org {
+      margin: 0 0 1.5mm;
+      font-size: 8.75pt;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .job ul, .project ul {
+      margin: 0;
+      padding-left: 3.5mm;
+      color: var(--muted);
+    }
+
+    .job li, .project li {
+      margin-bottom: 0.8mm;
+    }
+
+    .project-note {
+      margin: 1mm 0 0;
+      font-size: 8pt;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .compact-list {
+      margin: 0;
+      padding-left: 3.5mm;
+      color: var(--muted);
+    }
+
+    .compact-list li { margin-bottom: 0.6mm; }
+
+    @media print {
+      body { background: #fff; }
+      .page {
+        width: auto;
+        min-height: auto;
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+      }
+      .no-print { display: none; }
+      a { color: inherit; }
+    }
+
+    @page { size: A4; margin: 12mm; }
+
+    .print-bar {
+      width: 210mm;
+      margin: 8mm auto 0;
+      text-align: center;
+      font-size: 9pt;
+      color: var(--muted);
+    }
+
+    .print-bar button {
+      font: inherit;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: #fff;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <p class="print-bar no-print">
+    <button type="button" onclick="window.print()">Save as PDF (Print → Save as PDF)</button>
+    ·
+    <a href="Antonio-Ruiz-Brocal-CV-2026.pdf" download="Antonio-Ruiz-Brocal-CV-2026.pdf">Download latest PDF</a>
+    ·
+    <a href="../index.html">Back to portfolio</a>
+  </p>
+
+  <article class="page">
+    <header>
+      <div>
+        <h1>Antonio Ruiz Brocal</h1>
+        <p class="headline">Full-Stack Developer · Berlin</p>
+      </div>
+      <div class="contact">
+        <div>antonioruizbrocal@gmail.com</div>
+        <div>+49 173 349 0527</div>
+        <div>Berlin, Germany · EU work authorized</div>
+        <div><a href="https://antonioruizdeveloper.com">antonioruizdeveloper.com</a></div>
+        <div><a href="https://www.linkedin.com/in/antonio-ruiz-brocal-59b656294">LinkedIn</a> · <a href="https://github.com/Brocal82">GitHub</a></div>
+      </div>
+    </header>
+
+    <p class="summary">
+      Full-stack developer with <strong>3+ years</strong> of hands-on experience in React, TypeScript and Node.js.
+      Currently working as a <strong>paramedic in Berlin</strong> while shipping production software — including a B2B platform for ambulance operations built end to end (web, mobile, API).
+      Seeking junior–mid developer roles, contracts or freelance work in healthtech, B2B SaaS and operations software. Remote, hybrid or on-site in the EU.
+    </p>
+
+    <div class="grid">
+      <aside class="sidebar">
+        <section>
+          <h2>Skills</h2>
+          <div class="skill-group">
+            <strong>Production</strong>
+            <span>React · TypeScript · JavaScript · Node.js · Express · REST · MongoDB · JWT · React Native · Expo · HTML · CSS · Git</span>
+          </div>
+          <div class="skill-group">
+            <strong>Delivery &amp; quality</strong>
+            <span>GitHub Actions · Docker · Automated tests · Playwright · Code review · Multi-tenant patterns</span>
+          </div>
+          <div class="skill-group">
+            <strong>Dev workflow</strong>
+            <span>Cursor · Claude · Codex · MCPs · Agent skills — always reviewed before merge</span>
+          </div>
+        </section>
+
+        <section>
+          <h2>Languages</h2>
+          <ul class="plain lang">
+            <li><span>Spanish</span><span>Native</span></li>
+            <li><span>English</span><span>Fluent</span></li>
+            <li><span>German</span><span>B1–B2</span></li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Education</h2>
+          <div class="job">
+            <div class="job-head">
+              <strong>Full-Stack Web Development</strong>
+              <span class="when">2023</span>
+            </div>
+            <p class="org">CareerFoundry · Berlin</p>
+          </div>
+          <div class="job">
+            <div class="job-head">
+              <strong>Emergency Medical Technician</strong>
+              <span class="when">2015–2017</span>
+            </div>
+            <p class="org">Natanael Formación · Murcia, Spain</p>
+          </div>
+        </section>
+
+        <section>
+          <h2>Earlier experience</h2>
+          <ul class="compact-list">
+            <li><strong>Driving instructor</strong> (self-employed &amp; schools) · UK / Spain · 2008–2015</li>
+            <li><strong>Restaurant manager</strong> · Leeds, UK · 2013–2015</li>
+          </ul>
+        </section>
+      </aside>
+
+      <main>
+        <section>
+          <h2>Selected project</h2>
+          <div class="project">
+            <div class="project-head">
+              <strong>Ambulancias GoRuiz</strong>
+              <span class="when">2023 – present · Production</span>
+            </div>
+            <p class="org">Sole developer · B2B platform for ambulance companies (private)</p>
+            <ul>
+              <li>Built admin web app, worker web portal and <strong>React Native (Expo)</strong> app for field staff — scheduling, documents, messaging.</li>
+              <li>Designed REST API with <strong>JWT auth</strong>, role-based access and <strong>multi-tenant</strong> company scoping; multilingual UI (ES / DE / EN).</li>
+              <li>Delivery pipeline with <strong>Git, GitHub Actions and Docker</strong> for CI; focus on maintainable code for a small team.</li>
+            </ul>
+            <p class="project-note">Overview available on request · antonioruizdeveloper.com</p>
+          </div>
+        </section>
+
+        <section>
+          <h2>Professional experience</h2>
+          <div class="job">
+            <div class="job-head">
+              <strong>Paramedic</strong>
+              <span class="when">2017 – present</span>
+            </div>
+            <p class="org">Ambulance services · Berlin, Germany &amp; Murcia, Spain</p>
+            <ul>
+              <li>Patient assessment, emergency care and transport under time pressure; clear communication with hospital teams and non-clinical staff.</li>
+              <li>Applied protocols consistently in high-stakes environments — transferable to reliable software delivery and incident handling.</li>
+              <li>Developed <strong>Ambulancias GoRuiz</strong> alongside clinical work; deep domain knowledge in ambulance operations and scheduling pain points.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h2>Additional development work</h2>
+          <div class="project">
+            <div class="project-head">
+              <strong>Product Manager</strong>
+              <span class="when">Demo project</span>
+            </div>
+            <p class="org">React · TypeScript · REST API · github.com/Brocal82</p>
+            <ul>
+              <li>Full-stack CRUD app with typed frontend and Node/Express backend; deployed demo on Vercel.</li>
+            </ul>
+          </div>
+          <p class="project-note">Earlier learning projects (MyFlix, chat app) and code samples on GitHub.</p>
+        </section>
+      </main>
+    </div>
+  </article>
+</body>
+</html>
