@@ -31,131 +31,195 @@
   </header>
 
   <main class="case-study-page">
-    <article class="section-inner case-study-article">
-      <p class="section-label">Case study</p>
-      <header class="case-study-header">
+    <div class="section-inner case-study-shell">
+
+      <header class="cs-hero">
+        <p class="section-label">Case study</p>
         <h1>Ambulancias GoRuiz</h1>
-        <p class="case-study-lead">
+        <p class="cs-lead">
           Production B2B platform for ambulance and medical transport operations — built end to end as sole developer.
-          Private repository; screenshots and overview shared on request.
         </p>
-        <div class="project-badges">
+        <div class="project-badges cs-badges">
           <span class="project-type">Production</span>
           <span class="project-type project-type-muted">Private</span>
           <span class="project-type project-type-muted">Sole developer</span>
         </div>
       </header>
 
-      <section class="case-study-section">
-        <h2>Context</h2>
-        <p>
-          I work as a paramedic in Berlin and built GoRuiz outside my clinical shifts. I know the domain from daily
-          operations: shift planning, worker availability, documents, and the gap between office tools and what crews
-          need in the field. The goal was a single system — not a demo — that admins and field staff would use every week.
-        </p>
-      </section>
-
-      <section class="case-study-section">
-        <h2>Problem</h2>
-        <ul class="case-study-list">
-          <li>Scheduling and worker data spread across spreadsheets, messages and ad-hoc tools</li>
-          <li>Office staff and field crews without a shared, up-to-date view of shifts and requests</li>
-          <li>Sensitive documents (contracts, certificates) needing role-based access, not public links</li>
-        </ul>
-      </section>
-
-      <section class="case-study-section">
-        <h2>What I built</h2>
-        <div class="case-study-grid">
-          <div class="case-study-card">
-            <h3>Admin web app</h3>
-            <p>Dashboard, worker management, scheduling (Dienstplan), company settings — React + TypeScript.</p>
-          </div>
-          <div class="case-study-card">
-            <h3>Worker web portal</h3>
-            <p>Browser access for staff who do not use the mobile app — same API, role-scoped data.</p>
-          </div>
-          <div class="case-study-card">
-            <h3>Field mobile app</h3>
-            <p>React Native (Expo): shifts, workday, documents, messages — for crews on the road.</p>
-          </div>
-          <div class="case-study-card">
-            <h3>Shared backend</h3>
-            <p>Node.js / Express REST API, MongoDB, JWT auth, multi-tenant <code>companyId</code> scoping.</p>
-          </div>
+      <figure class="cs-preview">
+        <div class="cs-preview-frame">
+          <img src="img/projects/goruiz-diensts.png" alt="GoRuiz weekly Dienstplan scheduling view" loading="lazy">
         </div>
-      </section>
+        <figcaption>Weekly Dienstplan — admin scheduling view</figcaption>
+      </figure>
 
-      <section class="case-study-section">
-        <h2>Architecture (high level)</h2>
-        <pre class="case-study-diagram" aria-label="Architecture diagram">┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐
-│  Admin web      │  │  Worker web     │  │  Mobile app     │
-│  React + TS     │  │  React + TS     │  │  React Native   │
-└────────┬────────┘  └────────┬────────┘  └────────┬────────┘
-         │                    │                    │
-         └────────────────────┼────────────────────┘
-                              │  REST · JWT
-                    ┌─────────▼─────────┐
-                    │  Node.js / Express │
-                    │  MongoDB           │
-                    │  Multi-tenant      │
-                    └───────────────────┘</pre>
-        <p>
-          Three clients consume one API. Authentication and tenant isolation are enforced in the service layer —
-          not only at the route — including legacy records where <code>companyId</code> may be null.
-        </p>
-      </section>
+      <ul class="cs-highlights">
+        <li>
+          <span class="cs-highlight-label">Problem</span>
+          <p>Scheduling and worker data spread across spreadsheets, messages and ad-hoc tools.</p>
+        </li>
+        <li>
+          <span class="cs-highlight-label">Solution</span>
+          <p>One platform: admin web, worker portal and mobile app on a shared API.</p>
+        </li>
+        <li>
+          <span class="cs-highlight-label">Outcome</span>
+          <p>Live system for planning, worker data and field access — used in real operations.</p>
+        </li>
+      </ul>
 
-      <section class="case-study-section">
-        <h2>Key technical decisions</h2>
-        <ul class="case-study-list">
-          <li><strong>Multi-tenant from the start</strong> — each ambulance company scoped by <code>companyId</code>; admin operations always tenant-aware.</li>
-          <li><strong>One API for web + mobile</strong> — avoids duplicate business logic and keeps mobile in sync with office tools.</li>
-          <li><strong>JWT + role-based access</strong> — separate admin vs worker capabilities; documents served through authenticated routes, not public uploads.</li>
-          <li><strong>i18n (DE / EN / ES)</strong> — UI and content for mixed-language teams common in Berlin operations.</li>
-          <li><strong>CI with GitHub Actions + Docker</strong> — typecheck, tests and consistent MongoDB in pipeline before merge.</li>
-          <li><strong>AI-assisted workflow</strong> — Cursor, Claude, MCPs for speed on boilerplate; architecture and production code reviewed manually.</li>
-        </ul>
-      </section>
+      <p class="cs-product-scope">
+        In day-to-day use, GoRuiz manages the workflows an ambulance company runs every week:
+        <strong>Dienstplan</strong> (shift scheduling and assignments), <strong>vacations</strong>,
+        <strong>sick leave</strong> (approvals and document follow-up), <strong>payroll</strong> documents
+        for staff, worker profiles, secure HR files, and mobile access to shifts, workday and messages.
+      </p>
 
-      <section class="case-study-section">
-        <h2>Challenges</h2>
-        <ul class="case-study-list">
-          <li>Designing scheduling UX that office admins can trust and adjust quickly</li>
-          <li>Keeping mobile useful with intermittent connectivity and simple day-to-day flows</li>
-          <li>Maintaining security boundaries for medical/HR documents across roles and tenants</li>
-          <li>Shipping incrementally while working full-time as a paramedic — small, reviewable changes over big rewrites</li>
-        </ul>
-      </section>
+      <div class="cs-layout">
+        <article class="cs-main">
 
-      <section class="case-study-section">
-        <h2>Outcome</h2>
-        <p>
-          A live platform used for real operations: one place for planning, worker data and field access.
-          The codebase is structured for a small team to extend — clear module boundaries, typed clients,
-          and delivery habits (Git, CI, review) that match how I would work in a product team.
-        </p>
-        <p class="case-study-note">
-          Code and live access are private. I can walk through architecture, screenshots and technical decisions in an interview or call.
-        </p>
-      </section>
+          <section class="cs-block">
+            <h2>Context</h2>
+            <p>
+              I work as an EMT (Emergency Medical Technician) in Berlin — Rettungssanitäter in Germany — and built GoRuiz outside my EMS shifts. I know the domain from daily
+              operations: shift planning, worker availability, documents, and the gap between office tools and what crews
+              need in the field. The goal was a single system — not a demo — that admins and field staff would use every week.
+            </p>
+          </section>
 
-      <section class="case-study-section">
-        <h2>Stack</h2>
-        <ul class="stack-tags stack-tags-sm">
-          <li>React</li><li>TypeScript</li><li>Node.js</li><li>Express</li><li>MongoDB</li>
-          <li>JWT</li><li>React Native</li><li>Expo</li><li>Git</li><li>GitHub Actions</li><li>Docker</li>
-        </ul>
-      </section>
+          <section class="cs-block">
+            <h2>What I built</h2>
+            <div class="cs-built-grid">
+              <div class="cs-built-card">
+                <span class="cs-built-icon" aria-hidden="true">01</span>
+                <h3>Admin web app</h3>
+                <p>Dashboard, worker management, Dienstplan, company settings — React + TypeScript.</p>
+              </div>
+              <div class="cs-built-card">
+                <span class="cs-built-icon" aria-hidden="true">02</span>
+                <h3>Worker web portal</h3>
+                <p>Browser access for staff — same API, role-scoped data.</p>
+              </div>
+              <div class="cs-built-card">
+                <span class="cs-built-icon" aria-hidden="true">03</span>
+                <h3>Field mobile app</h3>
+                <p>React Native (Expo): shifts, workday, documents, messages.</p>
+              </div>
+              <div class="cs-built-card">
+                <span class="cs-built-icon" aria-hidden="true">04</span>
+                <h3>Shared backend</h3>
+                <p>Node.js / Express, MongoDB, JWT, multi-tenant <code>companyId</code> scoping.</p>
+              </div>
+            </div>
+          </section>
 
-      <div class="case-study-actions">
+          <section class="cs-block cs-block-wide">
+            <h2>Architecture</h2>
+            <div class="cs-arch">
+              <div class="cs-arch-clients">
+                <div class="cs-arch-node">Admin web<span>React · TS</span></div>
+                <div class="cs-arch-node">Worker web<span>React · TS</span></div>
+                <div class="cs-arch-node">Mobile app<span>React Native</span></div>
+              </div>
+              <div class="cs-arch-connector" aria-hidden="true">REST · JWT</div>
+              <div class="cs-arch-api">
+                <strong>Node.js / Express</strong>
+                <span>MongoDB · Multi-tenant · Service-layer auth</span>
+              </div>
+            </div>
+            <p class="cs-arch-note">
+              Three clients consume one API. Tenant isolation and auth are enforced in the service layer — including legacy records where <code>companyId</code> may be null.
+            </p>
+          </section>
+
+          <section class="cs-block">
+            <h2>Key decisions</h2>
+            <ul class="cs-decisions">
+              <li>
+                <strong>Multi-tenant from the start</strong>
+                <span>Each company scoped by <code>companyId</code>; admin ops always tenant-aware.</span>
+              </li>
+              <li>
+                <strong>One API for web + mobile</strong>
+                <span>No duplicate business logic between clients.</span>
+              </li>
+              <li>
+                <strong>JWT + role-based access</strong>
+                <span>Documents via authenticated routes — not public uploads.</span>
+              </li>
+              <li>
+                <strong>i18n (DE / EN / ES)</strong>
+                <span>Mixed-language teams common in Berlin operations.</span>
+              </li>
+              <li>
+                <strong>CI · GitHub Actions · Docker</strong>
+                <span>Typecheck, tests and consistent MongoDB before merge.</span>
+              </li>
+              <li>
+                <strong>AI-assisted workflow</strong>
+                <span>Cursor, Claude, MCPs for boilerplate — reviewed before production.</span>
+              </li>
+            </ul>
+          </section>
+
+          <section class="cs-block">
+            <h2>Challenges</h2>
+            <ul class="cs-list">
+              <li>Scheduling UX that office admins can trust and adjust quickly</li>
+              <li>Mobile flows that work with intermittent connectivity</li>
+              <li>Security boundaries for HR/medical documents across roles and tenants</li>
+              <li>Shipping incrementally while working full-time as an EMT</li>
+            </ul>
+          </section>
+
+          <section class="cs-block">
+            <h2>Result</h2>
+            <p>
+              A maintainable codebase with clear module boundaries, typed clients, and delivery habits (Git, CI, review)
+              that match how I would work in a product team.
+            </p>
+            <p class="cs-note">
+              Code and live access are private. I can walk through architecture, screenshots and technical decisions in an interview or call.
+            </p>
+          </section>
+
+        </article>
+
+        <aside class="cs-sidebar">
+          <div class="cs-sidebar-card">
+            <h3>At a glance</h3>
+            <dl class="cs-meta">
+              <div><dt>Role</dt><dd>Sole developer</dd></div>
+              <div><dt>Scope</dt><dd>Web · API · Mobile · CI</dd></div>
+              <div><dt>Status</dt><dd>Production · Private</dd></div>
+              <div><dt>Languages</dt><dd>DE · EN · ES</dd></div>
+            </dl>
+          </div>
+          <div class="cs-sidebar-card">
+            <h3>Production stack</h3>
+            <ul class="stack-tags stack-tags-sm cs-sidebar-tags">
+              <li>React</li><li>TypeScript</li><li>Node.js</li><li>Express</li>
+              <li>MongoDB</li><li>JWT</li><li>React Native</li><li>Expo</li>
+            </ul>
+          </div>
+          <div class="cs-sidebar-card">
+            <h3>Delivery</h3>
+            <ul class="stack-tags stack-tags-sm cs-sidebar-tags">
+              <li>Git</li><li>GitHub Actions</li><li>Docker</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+
+      <div class="cs-actions">
         <a href="index.html#contacto" class="btn btn-primary btn-project">
           <span>Request overview</span>
           <svg class="btn-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </a>
         <a href="index.html#proyectos" class="btn btn-secondary btn-project">Back to portfolio</a>
       </div>
-    </article>
+
+    </div>
   </main>
 
   <footer class="page-footer case-study-footer">
