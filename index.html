@@ -3,18 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Antonio Ruiz Brocal — Full-stack developer in Berlin. 3+ years building with React, TypeScript and Node.js. Emergency Medical Services (EMS), transitioning into software. German B1–B2. Production B2B platform for ambulance operations.">
-  <meta property="og:title" content="Antonio Ruiz Brocal | Full-Stack Developer">
-  <meta property="og:description" content="3+ years in web development. Currently working in Emergency Medical Services (EMS) in Berlin, open to freelance and full-time dev roles. React, TypeScript, Node.js.">
+  <title>Antonio Ruiz Brocal | Full-Stack Developer · TypeScript, React, Node.js</title>
+  <meta name="description" content="Antonio Ruiz Brocal — full-stack developer in Berlin (TypeScript, React, Node.js, React Native). Building software since 2023. Main project: Ambulancias GoRuiz, a multi-tenant platform for ambulance operations with 1,300+ automated tests. EMS background.">
+  <link rel="canonical" href="https://antonioruizdeveloper.com/">
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Antonio Ruiz Brocal">
+  <meta property="og:title" content="Antonio Ruiz Brocal | Full-Stack Developer">
+  <meta property="og:description" content="Full-stack developer in Berlin — TypeScript, React, Node.js, React Native. Main project: a multi-tenant platform for ambulance operations (web, mobile, API).">
   <meta property="og:url" content="https://antonioruizdeveloper.com/">
-  <title>Antonio Ruiz Brocal | Full-Stack Developer · Freelance & Employment</title>
+  <meta property="og:image" content="https://antonioruizdeveloper.com/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Antonio Ruiz Brocal — Full-stack developer · TypeScript · React · Node.js">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta name="theme-color" content="#0f172a">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
     <div class="header-inner">
@@ -24,11 +36,11 @@
         <span class="nav-toggle-bar"></span>
         <span class="nav-toggle-bar"></span>
       </button>
-      <nav class="main-nav" id="main-nav">
+      <nav class="main-nav" id="main-nav" aria-label="Main">
         <ul>
           <li><a href="#inicio" class="nav-link">Home</a></li>
           <li><a href="#proyectos" class="nav-link">Work</a></li>
-          <li><a href="#servicios" class="nav-link">Services</a></li>
+          <li><a href="#engineering" class="nav-link">Engineering</a></li>
           <li><a href="#about_me" class="nav-link">About</a></li>
           <li><a href="#contacto" class="nav-link nav-link-cta">Contact</a></li>
         </ul>
@@ -36,37 +48,37 @@
     </div>
   </header>
 
-  <main>
+  <main id="main" tabindex="-1">
     <section class="hero" id="inicio">
       <div class="hero-bg" aria-hidden="true"></div>
       <div class="section-inner hero-inner">
-        <p class="hero-badge">Berlin · Open to freelance &amp; full-time roles</p>
-        <h1>From the ambulance to <span class="text-gradient">production software</span></h1>
+        <p class="hero-badge">Berlin · Open to developer roles</p>
+        <h1>From the ambulance to <span class="text-gradient">full-stack software</span></h1>
         <p class="hero-subtitle">
-          Full-stack developer with <strong>3+ years</strong> building web apps, <strong>REST APIs</strong> and mobile with React, TypeScript and Node.js —
-          including a live B2B platform for ambulance operations that I ship outside my EMS shifts.
+          Full-stack developer working with <strong>TypeScript, React, Node.js and React Native</strong>, building software since 2023.
+          Outside my EMS shifts I designed and built <strong>GoRuiz</strong>: a multi-tenant platform for ambulance operations with a web panel, a mobile app and a tested API.
         </p>
-        <ul class="hero-stats" aria-label="Highlights">
-          <li><strong>3+</strong><span>Years in web dev</span></li>
-          <li><strong>1</strong><span>Production B2B platform</span></li>
-          <li><strong>Full-stack</strong><span>Web · API · mobile</span></li>
+        <ul class="hero-stats" aria-label="GoRuiz in numbers">
+          <li><strong>1,300+</strong><span>Automated tests</span></li>
+          <li><strong>95</strong><span>Documented API operations</span></li>
+          <li><strong>3 apps</strong><span>Web · Mobile · API</span></li>
         </ul>
         <p class="hero-status">
-          <strong>Currently:</strong> Emergency Medical Services (EMS) in Berlin, transitioning into a full-time software role.
-          Junior–mid positions, contracts and freelance — remote, hybrid or on-site in the EU.
+          <strong>Currently:</strong> Rettungssanitäter (EMS) in Berlin, moving into a full-time software role.
+          Open to developer positions — remote, hybrid or on-site in the EU.
         </p>
         <div class="hero-actions">
           <a href="#proyectos" class="btn btn-primary btn-lg">
             <span>See my work</span>
             <svg class="btn-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
           </a>
-          <a href="#contacto" class="btn btn-secondary btn-lg">
-            <span>Get in touch</span>
-            <svg class="btn-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          </a>
-          <a href="cv/Antonio-Ruiz-Brocal-CV-2026.pdf" class="btn btn-ghost btn-lg" download="Antonio-Ruiz-Brocal-CV-2026.pdf" target="_blank" rel="noopener noreferrer">
+          <a href="cv/Antonio-Ruiz-Brocal-CV-2026.pdf" class="btn btn-secondary btn-lg" download="Antonio-Ruiz-Brocal-CV-2026.pdf">
             <span>Download CV</span>
             <svg class="btn-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+          </a>
+          <a href="#contacto" class="btn btn-ghost btn-lg">
+            <span>Get in touch</span>
+            <svg class="btn-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
           </a>
         </div>
       </div>
@@ -74,95 +86,108 @@
 
     <section class="section-block section-block-work" id="proyectos">
       <div class="section-inner">
-        <p class="section-label reveal">Portfolio</p>
+        <p class="section-label reveal">Flagship project</p>
         <h2 class="section-heading reveal">Selected work</h2>
-        <p class="section-intro reveal">One production platform, end to end — the kind of problem I know from the inside.</p>
+        <p class="section-intro reveal">One large personal project, built end to end — in a domain I know from the inside.</p>
 
         <article class="featured-project reveal">
           <div class="project-top">
             <div class="project-header">
               <h3>Ambulancias GoRuiz</h3>
               <div class="project-badges">
-                <span class="project-type">Production</span>
-                <span class="project-type project-type-muted">Private</span>
+                <span class="project-type">Personal project</span>
+                <span class="project-type project-type-muted">2025–2026</span>
+                <span class="project-type project-type-muted">Archived</span>
               </div>
             </div>
-            <p class="project-role"><strong>Role:</strong> Sole developer — web, mobile, backend and deployment</p>
+            <p class="project-role"><strong>Role:</strong> Sole developer — product scope, architecture, backend, web, mobile, testing and CI</p>
             <p class="project-summary">
-              B2B platform for ambulance operations — admin web app, worker portal, and a native
-              <strong>React Native (Expo)</strong> app for field staff. Same API, multilingual (ES/DE/EN), multi-tenant, JWT auth.
+              Multi-tenant operations platform for ambulance and patient-transport companies: shift planning, crews, vehicles, absences,
+              documents, payslips and bonuses. Web panel for admins and superadmin, including worker views; <strong>Expo mobile app</strong> for field crews;
+              <strong>Node.js / Express</strong> API with REST and WebSocket, backed by MongoDB.
+            </p>
+            <p class="project-status">
+              Personal project, designed and built over many months. It reached an advanced functional development stage and was deliberately
+              archived before production deployment — it has no customers or production users. <strong>Demo available on request.</strong>
             </p>
           </div>
 
           <ul class="case-study case-study-row">
-            <li><strong>Problem</strong> Manual scheduling and scattered worker data</li>
-            <li><strong>Solution</strong> Web + mobile with role-based access and secure documents</li>
-            <li><strong>Impact</strong> One system for office admins and crews in the field</li>
+            <li><strong>Problem</strong> Small ambulance companies run rosters, crews and absences on spreadsheets and messaging apps.</li>
+            <li><strong>Approach</strong> One API serving a web panel and a mobile app, with tenant isolation and role-based access.</li>
+            <li><strong>Engineering</strong> 893 backend + 432 frontend tests, CI on every pull request, OpenAPI spec and documented technical debt.</li>
           </ul>
 
           <div class="project-gallery">
             <div class="showcase-group">
-              <p class="showcase-group-label">Web · React + TypeScript</p>
+              <p class="showcase-group-label">Web panel · React + TypeScript</p>
               <div class="showcase-row showcase-row-web">
                 <figure class="showcase-item">
                   <div class="showcase-frame showcase-frame-web">
-                    <img src="img/projects/goruiz-admin.png" alt="Admin dashboard" loading="lazy">
+                    <img src="img/projects/goruiz-admin-dashboard.png" alt="GoRuiz admin dashboard with module cards for workers, teams, shift planning, absences and resources" width="2160" height="1350" loading="lazy" decoding="async">
                   </div>
-                  <figcaption>Admin</figcaption>
+                  <figcaption>Admin dashboard</figcaption>
                 </figure>
                 <figure class="showcase-item showcase-item-featured">
                   <div class="showcase-frame showcase-frame-web">
-                    <img src="img/projects/goruiz-diensts.png" alt="Weekly Dienstplan" loading="lazy">
+                    <img src="img/projects/goruiz-shift-planning.png" alt="Weekly shift planning view with teams, ambulances and shift times per day" width="2160" height="1350" loading="lazy" decoding="async">
                   </div>
-                  <figcaption>Dienstplan</figcaption>
+                  <figcaption>Weekly shift planning</figcaption>
                 </figure>
                 <figure class="showcase-item">
                   <div class="showcase-frame showcase-frame-web">
-                    <img src="img/projects/goruiz-worker.png" alt="Worker web portal" loading="lazy">
+                    <img src="img/projects/goruiz-security-monitoring.png" alt="Superadmin security monitoring: operational health, support-access activity and audit log" width="2160" height="1350" loading="lazy" decoding="async">
                   </div>
-                  <figcaption>Worker portal</figcaption>
+                  <figcaption>Security monitoring</figcaption>
                 </figure>
               </div>
             </div>
 
             <div class="showcase-group">
-              <p class="showcase-group-label">Mobile · React Native / Expo</p>
+              <p class="showcase-group-label">Mobile app · React Native / Expo</p>
               <div class="showcase-row showcase-row-mobile">
                 <figure class="showcase-item">
                   <div class="showcase-frame showcase-frame-mobile">
-                    <img src="img/projects/goruiz-mobile.png" alt="Worker app home screen" loading="lazy">
+                    <img src="img/projects/goruiz-mobile-home.png" alt="Crew app home screen with today's shift" width="540" height="1110" loading="lazy" decoding="async">
                   </div>
                   <figcaption>Home</figcaption>
                 </figure>
                 <figure class="showcase-item">
                   <div class="showcase-frame showcase-frame-mobile">
-                    <img src="img/projects/goruiz-mobile-vacaciones.png" alt="Worker app vacations" loading="lazy">
+                    <img src="img/projects/goruiz-mobile-workday.png" alt="Start of workday: choosing the ambulance and entering the odometer reading" width="540" height="1110" loading="lazy" decoding="async">
                   </div>
-                  <figcaption>Vacations</figcaption>
+                  <figcaption>Start of workday</figcaption>
+                </figure>
+                <figure class="showcase-item">
+                  <div class="showcase-frame showcase-frame-mobile">
+                    <img src="img/projects/goruiz-mobile-agenda.png" alt="Weekly agenda in the crew app" width="540" height="1110" loading="lazy" decoding="async">
+                  </div>
+                  <figcaption>Weekly agenda</figcaption>
                 </figure>
               </div>
             </div>
+            <p class="gallery-note">Local environment with fictitious demo data. UI shown in Spanish; German and English are also available.</p>
           </div>
 
           <div class="project-footer">
             <div class="project-footer-tags">
-              <p class="stack-heading">Production stack</p>
-              <ul class="stack-tags stack-tags-work" aria-label="Production technologies">
-                <li>React</li><li>TypeScript</li><li>React Native</li><li>Expo</li>
-                <li>Node.js</li><li>Express</li><li>MongoDB</li><li>JWT</li>
+              <p class="stack-heading">Core stack</p>
+              <ul class="stack-tags stack-tags-work" aria-label="Core technologies">
+                <li>TypeScript</li><li>React</li><li>React Native</li><li>Expo</li>
+                <li>Node.js</li><li>Express</li><li>MongoDB</li><li>WebSocket</li>
               </ul>
-              <p class="stack-heading stack-heading-spaced">Delivery</p>
-              <ul class="stack-tags stack-tags-work stack-tags-delivery" aria-label="Delivery workflow">
-                <li>Git</li><li>GitHub Actions</li><li>Docker</li>
+              <p class="stack-heading stack-heading-spaced">Quality &amp; delivery</p>
+              <ul class="stack-tags stack-tags-work stack-tags-delivery" aria-label="Quality and delivery tools">
+                <li>Jest</li><li>Vitest</li><li>GitHub Actions</li><li>Gitleaks</li>
               </ul>
             </div>
             <div class="project-links">
-              <a class="btn btn-secondary btn-project" href="goruiz-case-study.html">
-                <span>Read case study</span>
+              <a class="btn btn-primary btn-project" href="goruiz-case-study.html">
+                <span>Read the case study</span>
                 <svg class="btn-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
               </a>
-              <a class="btn btn-primary btn-project" href="#contacto">
-                <span>Request overview</span>
+              <a class="btn btn-secondary btn-project" href="#contacto">
+                <span>Ask for a walkthrough</span>
                 <svg class="btn-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
               </a>
             </div>
@@ -170,35 +195,51 @@
         </article>
 
         <p class="archive-note">
-          More projects on <a href="https://github.com/Brocal82" target="_blank" rel="noopener noreferrer">GitHub</a>
-          — including Product Manager (React/TS) and earlier learning work.
+          Smaller and earlier projects — including my CareerFoundry work from 2023 — are on
+          <a href="https://github.com/Brocal82" target="_blank" rel="noopener noreferrer">GitHub</a>.
         </p>
       </div>
     </section>
 
-    <section class="section-block section-block-alt" id="servicios">
+    <section class="section-block section-block-alt" id="engineering">
       <div class="section-inner">
-        <p class="section-label reveal">What I do</p>
-        <h2 class="section-heading reveal">Services</h2>
-        <div class="services-grid">
+        <p class="section-label reveal">Engineering</p>
+        <h2 class="section-heading reveal">What GoRuiz demonstrates</h2>
+        <p class="section-intro reveal">Concrete, verifiable parts of the project — each one covered in more depth in the case study.</p>
+        <div class="services-grid highlights-grid">
           <article class="service-card reveal">
             <span class="service-num" aria-hidden="true">01</span>
-            <h3>Web apps</h3>
-            <p>Dashboards &amp; products with React and TypeScript — built for people who use them every day.</p>
+            <h3>Multi-tenant by design</h3>
+            <p>The company is resolved server-side from the database and enforced in the service layer, with a tenant-isolation test suite in CI.</p>
           </article>
           <article class="service-card reveal">
             <span class="service-num" aria-hidden="true">02</span>
-            <h3>APIs &amp; backends</h3>
-            <p>REST, auth, MongoDB — tested in CI and built for web and mobile clients.</p>
+            <h3>Security-focused backend</h3>
+            <p>JWT with token versioning, role-based access for four roles, TOTP MFA and step-up re-authentication, audit log and rate limiting.</p>
           </article>
           <article class="service-card reveal">
             <span class="service-num" aria-hidden="true">03</span>
-            <h3>MVPs &amp; tools</h3>
-            <p>Healthtech, logistics &amp; ops-heavy businesses where domain knowledge matters.</p>
+            <h3>Private file handling</h3>
+            <p>Medical documents and PDFs are served only through an authenticated endpoint with ownership checks; the public path is limited to images.</p>
+          </article>
+          <article class="service-card reveal">
+            <span class="service-num" aria-hidden="true">04</span>
+            <h3>Real-time updates</h3>
+            <p>A WebSocket channel sends minimal refresh signals — no data over the socket; clients refetch through the authenticated API.</p>
+          </article>
+          <article class="service-card reveal">
+            <span class="service-num" aria-hidden="true">05</span>
+            <h3>Tested against a real database</h3>
+            <p>893 backend tests (Jest + Supertest on MongoDB) and 432 frontend tests (Vitest + Testing Library).</p>
+          </article>
+          <article class="service-card reveal">
+            <span class="service-num" aria-hidden="true">06</span>
+            <h3>Documented and reproducible</h3>
+            <p>OpenAPI 3 spec with 95 operations, CI with secret scanning, a recovery guide and a written log of known issues.</p>
           </article>
         </div>
         <p class="engagement-inline">
-          <strong>Freelance</strong> · <strong>Contract</strong> · <strong>Full-time dev roles</strong> (Berlin / remote EU) —
+          Looking for a <strong>full-time developer role</strong> · contract work considered —
           <a href="#contacto">get in touch →</a>
         </p>
       </div>
@@ -210,36 +251,40 @@
         <h2 class="section-heading reveal">About</h2>
 
         <div class="about-profile reveal">
-          <img class="about-avatar" src="img/antonio-about.jpg" alt="Antonio Ruiz Brocal" width="112" height="112" loading="lazy">
+          <img class="about-avatar" src="img/antonio-avatar.jpg" alt="Portrait of Antonio Ruiz Brocal" width="360" height="466" loading="lazy" decoding="async">
           <p class="about-name">Antonio Ruiz Brocal</p>
-          <p class="about-tagline">Full-stack developer · Berlin</p>
+          <p class="about-tagline">Full-stack developer · Rettungssanitäter · Berlin</p>
         </div>
 
         <div class="about-grid">
           <div class="section-card prose reveal">
             <p>
-              I'm a full-stack developer based in <strong>Berlin</strong> with <strong>3+ years</strong> of hands-on experience in HTML, CSS, JavaScript and modern frameworks — mainly <strong>React, TypeScript and Node.js</strong>.
+              I'm a full-stack developer based in <strong>Berlin</strong>. I started programming in 2023 with CareerFoundry's Full-Stack Web Development
+              program and have kept building since — mainly with <strong>TypeScript, React, Node.js and React Native</strong>.
             </p>
             <p>
-              My strongest work so far is <strong>Ambulancias GoRuiz</strong>: a production platform I designed and built for ambulance scheduling and operations. I focus on clear UX for everyday users, reliable authentication and code that a small team can maintain.
+              My main project is <strong>Ambulancias GoRuiz</strong>, a multi-tenant platform for ambulance operations that I designed and built on my own
+              over many months. It taught me what changes when software has to serve several companies, protect sensitive documents and stay in sync in
+              real time: tenant isolation, security boundaries, integration testing and keeping a large codebase maintainable.
             </p>
             <p>
-              I'm especially interested in <strong>healthtech, B2B SaaS and operations software</strong> — areas where I understand the domain from the inside.
+              I work as a <strong>Rettungssanitäter</strong> (EMS). That is where the domain knowledge behind GoRuiz comes from — and why I'm especially
+              interested in <strong>healthtech, B2B SaaS and operations software</strong>.
             </p>
             <p class="about-languages"><strong>Languages:</strong> English · Spanish (native) · German (B1–B2)</p>
             <div class="about-cv-actions">
               <p class="about-cv-label">Résumé</p>
               <div class="about-cv-buttons">
-                <a class="about-cv-btn about-cv-btn-primary" href="cv/Antonio-Ruiz-Brocal-CV-2026.pdf" download="Antonio-Ruiz-Brocal-CV-2026.pdf" target="_blank" rel="noopener noreferrer">
+                <a class="about-cv-btn about-cv-btn-primary" href="cv/Antonio-Ruiz-Brocal-CV-2026.pdf" download="Antonio-Ruiz-Brocal-CV-2026.pdf">
                   <span class="about-cv-btn-icon" aria-hidden="true">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
                   </span>
                   <span class="about-cv-btn-text">
                     <strong>Download CV</strong>
-                    <small>PDF · updated 2026</small>
+                    <small>PDF · updated October 2026</small>
                   </span>
                 </a>
-                <a class="about-cv-btn about-cv-btn-secondary" href="cv/antonio-ruiz-brocal-cv.html" target="_blank" rel="noopener noreferrer">
+                <a class="about-cv-btn about-cv-btn-secondary" href="cv/antonio-ruiz-brocal-cv.html">
                   <span class="about-cv-btn-icon" aria-hidden="true">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
                   </span>
@@ -255,12 +300,16 @@
             <h3 class="timeline-title">Path so far</h3>
             <ul class="timeline timeline-honest">
               <li>
-                <span class="timeline-period">Now</span>
-                <div><strong>Emergency Medical Services (EMS)</strong> — Spain &amp; Germany · current role</div>
+                <span class="timeline-period">2017 – now</span>
+                <div><strong>Emergency Medical Services (EMS)</strong> · Spain &amp; Germany · current job</div>
               </li>
               <li>
-                <span class="timeline-period">3+ yrs</span>
-                <div><strong>Web development</strong> · courses, personal projects &amp; GoRuiz in production</div>
+                <span class="timeline-period">2025 – 26</span>
+                <div><strong>Ambulancias GoRuiz</strong> · personal project, archived before production</div>
+              </li>
+              <li>
+                <span class="timeline-period">2023</span>
+                <div><strong>Full-Stack Web Development</strong> · CareerFoundry</div>
               </li>
               <li>
                 <span class="timeline-period">Before</span>
@@ -268,7 +317,7 @@
               </li>
             </ul>
             <p class="background-note">
-              Previous careers shaped how I work under pressure and with non-technical teams — they complement my development experience; they don't replace it.
+              Previous careers shaped how I work under pressure and with non-technical teams — they complement my development work; they don't replace it.
             </p>
           </div>
         </div>
@@ -276,28 +325,29 @@
         <div class="section-card about-workflow reveal">
           <h3 class="workflow-title">How I work</h3>
           <p class="workflow-intro">
-            I ship with the same habits I use on GoRuiz: version control, CI on every change, and Docker where environments need to match production.
-            For speed I use AI-assisted tooling on routine work — always reviewed before merge. Architecture, auth and business logic stay mine.
+            Small pull requests, CI on every change, integration tests against a real database, and written documentation for decisions and known issues.
+            I use AI-assisted tools for exploration and routine code under rules I define — every change goes through my own review.
+            Architecture, security model and business logic stay mine.
           </p>
 
           <div class="workflow-groups">
             <div class="workflow-group">
-              <p class="stack-label">Production stack</p>
+              <p class="stack-label">Core stack</p>
               <ul class="stack-tags stack-tags-sm">
-                <li>React</li><li>TypeScript</li><li>Node.js</li><li>Express</li><li>MongoDB</li>
-                <li>REST</li><li>JWT</li><li>React Native</li><li>Expo</li>
+                <li>TypeScript</li><li>JavaScript</li><li>React</li><li>React Native</li><li>Expo</li>
+                <li>Node.js</li><li>Express</li><li>MongoDB</li><li>REST</li><li>WebSocket</li>
               </ul>
             </div>
             <div class="workflow-group">
-              <p class="stack-label">Delivery &amp; quality</p>
+              <p class="stack-label">Quality &amp; delivery</p>
               <ul class="stack-tags stack-tags-sm stack-tags-engineering">
-                <li>Git</li><li>GitHub Actions</li><li>Docker</li><li>Automated tests</li><li>Playwright</li>
+                <li>Git</li><li>GitHub Actions</li><li>Jest</li><li>Supertest</li><li>Vitest</li><li>Testing Library</li><li>OpenAPI</li><li>Gitleaks</li>
               </ul>
             </div>
             <div class="workflow-group">
               <p class="stack-label">AI-assisted workflow</p>
               <ul class="stack-tags stack-tags-sm stack-tags-tooling">
-                <li>Cursor</li><li>Claude</li><li>Codex</li><li>MCPs</li><li>Agent skills</li>
+                <li>Cursor</li><li>Claude</li><li>Codex</li><li>MCPs</li>
               </ul>
             </div>
           </div>
@@ -309,18 +359,19 @@
   <footer class="page-footer" id="contacto">
     <div class="section-inner">
       <h2 class="section-heading section-heading-light">Contact</h2>
-      <p class="footer-text">Freelance, contract or full-time dev roles — I reply within 1–2 business days.</p>
+      <p class="footer-text">Open to developer roles in Berlin or remote in the EU. I usually reply within 1–2 business days.</p>
       <div class="contact-actions">
-        <a class="social-link" href="mailto:antonioruizbrocal@gmail.com?subject=Project%20inquiry%20-%20Portfolio" aria-label="Email Antonio Ruiz Brocal">
+        <a class="social-link" href="mailto:antonioruizbrocal@gmail.com?subject=Contact%20from%20your%20portfolio" aria-label="Email Antonio Ruiz Brocal">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
         </a>
         <a class="social-link" href="https://www.linkedin.com/in/antonio-ruiz-brocal-59b656294" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a-1.782 1.782 0 1 1 0-3.564 1.782 1.782 0 0 1 0 3.564zM7.119 20.452H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a1.782 1.782 0 1 1 0-3.564 1.782 1.782 0 0 1 0 3.564zM7.119 20.452H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
         </a>
         <a class="social-link" href="https://github.com/Brocal82" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.021c0 4.428 2.865 8.184 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.021C22 6.484 17.522 2 12 2z"/></svg>
         </a>
       </div>
+      <p class="footer-email"><a href="mailto:antonioruizbrocal@gmail.com">antonioruizbrocal@gmail.com</a></p>
       <a class="back" href="#inicio">Back to top</a>
       <p class="footer-copy">&copy; 2026 Antonio Ruiz Brocal · Berlin</p>
     </div>

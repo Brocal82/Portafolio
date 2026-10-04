@@ -3,14 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Case study: Ambulancias GoRuiz — production B2B platform for ambulance operations. Full-stack: React, TypeScript, Node.js, React Native.">
   <title>Case study · Ambulancias GoRuiz | Antonio Ruiz Brocal</title>
+  <meta name="description" content="Case study: Ambulancias GoRuiz, a multi-tenant platform for ambulance operations — React web panel, Expo mobile app and Node.js/MongoDB API. Architecture, security, testing, trade-offs and known technical debt.">
+  <link rel="canonical" href="https://antonioruizdeveloper.com/goruiz-case-study.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Antonio Ruiz Brocal">
+  <meta property="og:title" content="Case study · Ambulancias GoRuiz">
+  <meta property="og:description" content="Multi-tenant platform for ambulance operations: web panel, mobile app and API. 893 backend + 432 frontend tests, OpenAPI, MFA, WebSockets. Personal project, archived before production.">
+  <meta property="og:url" content="https://antonioruizdeveloper.com/goruiz-case-study.html">
+  <meta property="og:image" content="https://antonioruizdeveloper.com/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Antonio Ruiz Brocal — Full-stack developer · TypeScript · React · Node.js">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta name="theme-color" content="#0f172a">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
     <div class="header-inner">
@@ -20,7 +36,7 @@
         <span class="nav-toggle-bar"></span>
         <span class="nav-toggle-bar"></span>
       </button>
-      <nav class="main-nav" id="main-nav">
+      <nav class="main-nav" id="main-nav" aria-label="Main">
         <ul>
           <li><a href="index.html#proyectos" class="nav-link">Work</a></li>
           <li><a href="index.html#about_me" class="nav-link">About</a></li>
@@ -30,157 +46,296 @@
     </div>
   </header>
 
-  <main class="case-study-page">
+  <main class="case-study-page" id="main" tabindex="-1">
     <div class="section-inner case-study-shell">
 
       <header class="cs-hero">
         <p class="section-label">Case study</p>
         <h1>Ambulancias GoRuiz</h1>
         <p class="cs-lead">
-          Production B2B platform for ambulance and medical transport operations — built end to end as sole developer.
+          A multi-tenant operations platform for ambulance and patient-transport companies — web panel, mobile app and API,
+          designed and built end to end as a personal project.
         </p>
         <div class="project-badges cs-badges">
-          <span class="project-type">Production</span>
-          <span class="project-type project-type-muted">Private</span>
+          <span class="project-type">Personal project</span>
+          <span class="project-type project-type-muted">2025–2026</span>
           <span class="project-type project-type-muted">Sole developer</span>
+          <span class="project-type project-type-muted">Archived before production</span>
         </div>
       </header>
 
+      <p class="cs-status">
+        <strong>Project status.</strong> Personal project, designed and built over many months. It reached an advanced functional development
+        stage and was deliberately archived before production deployment in October 2026. It never had customers or production users.
+        All screenshots use fictitious demo data.
+      </p>
+
       <figure class="cs-preview">
         <div class="cs-preview-frame">
-          <img src="img/projects/goruiz-diensts.png" alt="GoRuiz weekly Dienstplan scheduling view" loading="lazy">
+          <img src="img/projects/goruiz-shift-planning.png" alt="Weekly shift planning: teams, ambulances and shift times generated from templates" width="2160" height="1350" decoding="async">
         </div>
-        <figcaption>Weekly Dienstplan — admin scheduling view</figcaption>
+        <figcaption>Weekly shift (Dienst) planning — generated from templates with team rotation</figcaption>
       </figure>
 
       <ul class="cs-highlights">
         <li>
-          <span class="cs-highlight-label">Problem</span>
-          <p>Scheduling and worker data spread across spreadsheets, messages and ad-hoc tools.</p>
+          <span class="cs-highlight-label">Scope</span>
+          <p>3 applications · 23 backend domain modules · 20 web modules · ES / DE / EN</p>
         </li>
         <li>
-          <span class="cs-highlight-label">Solution</span>
-          <p>One platform: admin web, worker portal and mobile app on a shared API.</p>
+          <span class="cs-highlight-label">Quality</span>
+          <p>893 backend + 432 frontend tests, all passing at archive time; CI on every pull request</p>
         </li>
         <li>
-          <span class="cs-highlight-label">Outcome</span>
-          <p>Live system for planning, worker data and field access — used in real operations.</p>
+          <span class="cs-highlight-label">API</span>
+          <p>REST + WebSocket · OpenAPI 3 spec with 95 operations, validated in CI</p>
         </li>
       </ul>
-
-      <p class="cs-product-scope">
-        In day-to-day use, GoRuiz manages the workflows an ambulance company runs every week:
-        <strong>Dienstplan</strong> (shift scheduling and assignments), <strong>vacations</strong>,
-        <strong>sick leave</strong> (approvals and document follow-up), <strong>payroll</strong> documents
-        for staff, worker profiles, secure HR files, and mobile access to shifts, workday and messages.
-      </p>
 
       <div class="cs-layout">
         <article class="cs-main">
 
-          <section class="cs-block">
+          <section class="cs-block" id="context">
             <h2>Context</h2>
             <p>
-              I work in Emergency Medical Services (EMS) in Berlin — Rettungssanitäter — and built GoRuiz outside my EMS shifts. I know the domain from daily
-              operations: shift planning, worker availability, documents, and the gap between office tools and what crews
-              need in the field. The goal was a single system — not a demo — that admins and field staff would use every week.
+              Ambulance companies run on tight schedules: weekly duty rosters, two-person crews (driver + paramedic), vehicles, sick leave,
+              holidays, documents and monthly bonuses. In many small companies this lives in spreadsheets and messaging apps.
+            </p>
+            <p>
+              I work in Emergency Medical Services (EMS) in Berlin as a Rettungssanitäter and know these workflows from the crew side.
+              GoRuiz was my attempt to build the system I would want an ambulance company to use — and a way to learn how a
+              multi-tenant product with sensitive data is built properly. I developed it outside my EMS shifts.
             </p>
           </section>
 
-          <section class="cs-block">
-            <h2>What I built</h2>
-            <div class="cs-built-grid">
-              <div class="cs-built-card">
-                <span class="cs-built-icon" aria-hidden="true">01</span>
-                <h3>Admin web app</h3>
-                <p>Dashboard, worker management, Dienstplan, company settings — React + TypeScript.</p>
-              </div>
-              <div class="cs-built-card">
-                <span class="cs-built-icon" aria-hidden="true">02</span>
-                <h3>Worker web portal</h3>
-                <p>Browser access for staff — same API, role-scoped data.</p>
-              </div>
-              <div class="cs-built-card">
-                <span class="cs-built-icon" aria-hidden="true">03</span>
-                <h3>Field mobile app</h3>
-                <p>React Native (Expo): shifts, workday, documents, messages.</p>
-              </div>
-              <div class="cs-built-card">
-                <span class="cs-built-icon" aria-hidden="true">04</span>
-                <h3>Shared backend</h3>
-                <p>Node.js / Express, MongoDB, JWT, multi-tenant <code>companyId</code> scoping.</p>
-              </div>
-            </div>
+          <section class="cs-block" id="scope">
+            <h2>What it covers</h2>
+            <ul class="cs-list">
+              <li><strong>Planning:</strong> weekly shift planning from reusable templates with team rotation and vehicle assignment; alternative weekly import from Excel.</li>
+              <li><strong>Field work:</strong> mobile workday flow — start of day (vehicle and odometer), trips (pickup, destination, hospital), partial and final closure; vehicle defect reports for mechanics.</li>
+              <li><strong>People:</strong> holiday requests with approval, rejection or alternative dates; sick leave with document upload and review; appointments and internal messages.</li>
+              <li><strong>Documents and pay:</strong> company documents with read acknowledgment; payslip PDFs uploaded in batches and matched by employee number (ambiguous files are never auto-assigned); monthly bonus (<em>Prämien</em>) calculation with configurable rules.</li>
+              <li><strong>Platform:</strong> company onboarding and per-company module activation, security monitoring, audit log and time-limited support access with approval.</li>
+            </ul>
           </section>
 
-          <section class="cs-block cs-block-wide">
+          <section class="cs-block" id="architecture">
             <h2>Architecture</h2>
             <div class="cs-arch">
-              <div class="cs-arch-clients">
-                <div class="cs-arch-node">Admin web<span>React · TS</span></div>
-                <div class="cs-arch-node">Worker web<span>React · TS</span></div>
-                <div class="cs-arch-node">Mobile app<span>React Native</span></div>
+              <div class="cs-arch-clients cs-arch-clients-2">
+                <div class="cs-arch-node">Web panel<span>React 19 · Vite · TypeScript</span></div>
+                <div class="cs-arch-node">Mobile app<span>Expo · React Native</span></div>
               </div>
-              <div class="cs-arch-connector" aria-hidden="true">REST · JWT</div>
+              <div class="cs-arch-connector" aria-hidden="true">HTTPS · REST + WebSocket</div>
               <div class="cs-arch-api">
-                <strong>Node.js / Express</strong>
-                <span>MongoDB · Multi-tenant · Service-layer auth</span>
+                <strong>Node.js · Express 5 · TypeScript</strong>
+                <span>JWT · Zod · ws · node-cron</span>
+              </div>
+              <div class="cs-arch-clients cs-arch-stores">
+                <div class="cs-arch-node">MongoDB<span>Mongoose · replica set</span></div>
+                <div class="cs-arch-node">Private files<span>authenticated access only</span></div>
+                <div class="cs-arch-node">Push<span>Expo Push → FCM</span></div>
               </div>
             </div>
             <p class="cs-arch-note">
-              Three clients consume one API. Tenant isolation and auth are enforced in the service layer — including legacy records where <code>companyId</code> may be null.
+              A monorepo with three independent applications that talk only over HTTP and WebSocket. The web panel serves company admins and the platform
+              superadmin, including worker views; field crews use the Expo app. One API serves both client applications, with role-based access for admins, workers,
+              mechanics and the superadmin.
             </p>
           </section>
 
-          <section class="cs-block">
-            <h2>Key decisions</h2>
+          <section class="cs-block" id="backend">
+            <h2>Backend</h2>
+            <p>
+              Express 5 and TypeScript with one folder per business domain (<code>src/modules/*</code>). Controllers only parse the request, call a service
+              and return JSON; business rules and tenant checks live in the service layer. Request bodies are validated with Zod, MongoDB is accessed through
+              Mongoose 8, and multi-document operations use transactions — which is why the database runs as a replica set, also in tests.
+              Scheduled jobs run with node-cron, and every company has a list of enabled modules that middleware checks on each route.
+            </p>
+          </section>
+
+          <section class="cs-block" id="frontend">
+            <h2>Web frontend</h2>
+            <p>
+              React 19, Vite 6, Tailwind CSS 4 and React Router 7. Code is organised by business domain; each module keeps its HTTP calls in
+              <code>domain/api.ts</code> on top of one shared Axios instance (base URL, token and error handling), so components never call the network
+              directly. Sensitive files are opened through a single helper that uses the authenticated file endpoint — never a public link.
+            </p>
+            <figure class="cs-figure">
+              <div class="showcase-frame showcase-frame-web">
+                <img src="img/projects/goruiz-admin-dashboard.png" alt="Admin dashboard with module cards for workers, teams, shift planning, absences and resources" width="2160" height="1350" loading="lazy" decoding="async">
+              </div>
+              <figcaption>Company admin dashboard</figcaption>
+            </figure>
+          </section>
+
+          <section class="cs-block" id="mobile">
+            <h2>Mobile app</h2>
+            <p>
+              Expo SDK 54 / React Native 0.81 for field crews: today's shift, the workday flow, weekly agenda, holidays, sick leave, documents and messages.
+              The session is stored with Expo SecureStore, and push notifications go through Expo Push and Firebase Cloud Messaging.
+            </p>
+            <div class="cs-gallery">
+              <figure class="showcase-item">
+                <div class="showcase-frame showcase-frame-mobile">
+                  <img src="img/projects/goruiz-mobile-home.png" alt="Crew app home screen with today's shift" width="540" height="1110" loading="lazy" decoding="async">
+                </div>
+                <figcaption>Home</figcaption>
+              </figure>
+              <figure class="showcase-item">
+                <div class="showcase-frame showcase-frame-mobile">
+                  <img src="img/projects/goruiz-mobile-workday.png" alt="Start of workday: choosing the ambulance and entering the odometer reading" width="540" height="1110" loading="lazy" decoding="async">
+                </div>
+                <figcaption>Start of workday</figcaption>
+              </figure>
+              <figure class="showcase-item">
+                <div class="showcase-frame showcase-frame-mobile">
+                  <img src="img/projects/goruiz-mobile-agenda.png" alt="Weekly agenda in the crew app" width="540" height="1110" loading="lazy" decoding="async">
+                </div>
+                <figcaption>Weekly agenda</figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <section class="cs-block" id="multi-tenancy">
+            <h2>Multi-tenancy</h2>
+            <p>
+              Several companies share one deployment. Every admin operation is scoped by <code>companyId</code> in the service layer, and the company of
+              the current user is resolved from the database rather than trusted from the token. Records created before the tenant field existed are
+              handled explicitly through the owning user, so legacy data stays reachable without weakening isolation.
+              A dedicated tenant-isolation test suite runs as its own CI job on every pull request.
+            </p>
+          </section>
+
+          <section class="cs-block" id="security">
+            <h2>Authentication, authorization and security</h2>
+            <ul class="cs-list">
+              <li><strong>JWT with token versioning</strong> — incrementing a user's token version revokes their existing sessions, on HTTP and WebSocket.</li>
+              <li><strong>Role-based access</strong> for four roles, with a strict boundary: the platform superadmin cannot use company-admin routes and has its own.</li>
+              <li><strong>TOTP MFA and step-up re-authentication</strong> for critical superadmin actions.</li>
+              <li><strong>Time-limited support access</strong> to a company's data, with approval, a persistent audit log and a monitoring dashboard.</li>
+              <li><strong>Private files:</strong> medical documents, PDFs and attachments are served only through an authenticated endpoint with ownership checks; the public uploads path serves images only.</li>
+              <li><strong>Hardening:</strong> Helmet, rate limiting on sensitive endpoints, and Gitleaks secret scanning in CI.</li>
+            </ul>
+            <figure class="cs-figure">
+              <div class="showcase-frame showcase-frame-web">
+                <img src="img/projects/goruiz-security-monitoring.png" alt="Superadmin security monitoring: operational health, support-access activity, tenant risk and audit log" width="2160" height="1350" loading="lazy" decoding="async">
+              </div>
+              <figcaption>Superadmin security monitoring</figcaption>
+            </figure>
+          </section>
+
+          <section class="cs-block" id="realtime">
+            <h2>Real-time updates</h2>
+            <p>
+              A WebSocket channel pushes minimal <code>{ event }</code> signals such as "shifts changed". Clients then refetch through the normal
+              authenticated API, so no business data travels over the socket and the same authorization rules apply to everything the user sees.
+              Socket connections validate the same JWT and token version as HTTP requests.
+            </p>
+          </section>
+
+          <section class="cs-block" id="api">
+            <h2>API documentation</h2>
+            <p>
+              The API is described in an OpenAPI 3.0.3 specification (95 operations across 78 paths) with a read-only Swagger UI.
+              CI validates the generated spec artifact and the smoke test checks that the docs endpoint responds, so documentation cannot
+              silently disappear from a build.
+            </p>
+          </section>
+
+          <section class="cs-block" id="testing">
+            <h2>Testing and CI</h2>
+            <p>
+              <strong>893 backend tests</strong>, mostly integration tests with Jest and Supertest against a real MongoDB replica set, and
+              <strong>432 frontend tests</strong> with Vitest and Testing Library. All passed at archive time.
+            </p>
+            <p>GitHub Actions runs three jobs on every pull request:</p>
+            <ul class="cs-list">
+              <li><strong>validate</strong> — typecheck of backend, web and mobile; Gitleaks secret scan; builds; OpenAPI artifact validation; frontend tests; mobile app checks.</li>
+              <li><strong>security-isolation</strong> — tenant-isolation and security test suites against MongoDB.</li>
+              <li><strong>backend-smoke</strong> — builds the API, starts it and checks the health and docs endpoints.</li>
+            </ul>
+            <p>A separate workflow runs Gitleaks on its own as well.</p>
+          </section>
+
+          <section class="cs-block" id="i18n">
+            <h2>Internationalization</h2>
+            <p>
+              The web panel uses i18next with Spanish, German and English, following German ambulance-service terminology
+              (<em>Dienst</em>, <em>Prämien</em>, <em>P-Schein</em>). Translation is not complete: some admin sidebar labels and table headers are still
+              hard-coded in Spanish. These gaps are documented as known debt rather than hidden.
+            </p>
+          </section>
+
+          <section class="cs-block" id="decisions">
+            <h2>Key decisions and trade-offs</h2>
             <ul class="cs-decisions">
               <li>
-                <strong>Multi-tenant from the start</strong>
-                <span>Each company scoped by <code>companyId</code>; admin ops always tenant-aware.</span>
+                <strong>Modular monolith instead of microservices</strong>
+                <span>One deployable API with strict domain folders. Simpler to run and test for a single developer; the cost is that boundaries depend on discipline, not infrastructure.</span>
               </li>
               <li>
-                <strong>One API for web + mobile</strong>
-                <span>No duplicate business logic between clients.</span>
+                <strong>Tenant checks in the service layer</strong>
+                <span>Safer than route-level checks alone because every caller goes through them — at the price of more explicit code in each service.</span>
               </li>
               <li>
-                <strong>JWT + role-based access</strong>
-                <span>Documents via authenticated routes — not public uploads.</span>
+                <strong>Integration tests against a real database</strong>
+                <span>Catches query, index and transaction problems that mocks would hide. The cost is a slower suite and higher memory use (see problems below).</span>
               </li>
               <li>
-                <strong>i18n (DE / EN / ES)</strong>
-                <span>Mixed-language teams common in Berlin operations.</span>
+                <strong>WebSocket as a signal, not a data channel</strong>
+                <span>No duplicated authorization logic on the socket. Costs one extra request per update.</span>
               </li>
               <li>
-                <strong>CI · GitHub Actions · Docker</strong>
-                <span>Typecheck, tests and consistent MongoDB before merge.</span>
+                <strong>MongoDB with transactions</strong>
+                <span>Flexible documents for evolving modules, but transactions require a replica set everywhere — including local development and CI.</span>
               </li>
               <li>
-                <strong>AI-assisted workflow</strong>
-                <span>Cursor, Claude, MCPs for boilerplate — reviewed before production.</span>
+                <strong>AI-assisted development under explicit rules</strong>
+                <span>I used AI coding tools during parts of the project, constrained by written rules for architecture, tenant isolation, file security and testing. Every change went through my own review.</span>
               </li>
             </ul>
           </section>
 
-          <section class="cs-block">
-            <h2>Challenges</h2>
+          <section class="cs-block" id="problems">
+            <h2>Problems I ran into</h2>
             <ul class="cs-list">
-              <li>Scheduling UX that office admins can trust and adjust quickly</li>
-              <li>Mobile flows that work with intermittent connectivity</li>
-              <li>Security boundaries for HR/medical documents across roles and tenants</li>
-              <li>Shipping incrementally while working full-time in Emergency Medical Services (EMS)</li>
+              <li><strong>WebSocket registration window.</strong> The server authenticated the socket asynchronously and only then registered it, so an event emitted in those milliseconds was lost. Tests now wait for server-side registration; the proper fix is listed below.</li>
+              <li><strong>Memory growth in the test suite.</strong> Running all backend tests in one process ran out of memory. A dedicated script runs one worker with a memory limit that recycles it — the suite is reliable, but the root cause is still open.</li>
+              <li><strong>A conditional React hook.</strong> A form hook was called conditionally and could crash on re-render. Fixed and covered with a regression test.</li>
+              <li><strong>Dependency hygiene in a monorepo.</strong> An undeclared type dependency broke hosted builds, and installing the mobile workspace on its own pulled in a second copy of React. The first was fixed; the second is documented with the correct install procedure.</li>
             </ul>
           </section>
 
-          <section class="cs-block">
-            <h2>Result</h2>
+          <section class="cs-block" id="debt">
+            <h2>Known technical debt</h2>
+            <ul class="cs-list">
+              <li>Express <code>trust proxy</code> is not configured, so behind a reverse proxy all clients share one rate-limit counter. It must be set for the real proxy topology before any redeploy.</li>
+              <li>Frontend lint runs but does not pass (mostly <code>no-explicit-any</code>) and is not enforced in CI.</li>
+              <li>Two modals call hooks after an early return; harmless with the current mounting pattern, but fragile.</li>
+              <li>Incomplete translations (see above) and two runtime assets loaded from public CDNs.</li>
+              <li>Node 20 is out of support; the backend suite was verified only on Node 20.</li>
+            </ul>
+          </section>
+
+          <section class="cs-block" id="differently">
+            <h2>What I would do differently</h2>
+            <ul class="cs-list">
+              <li><strong>Validate earlier with a real company.</strong> I built breadth before testing the product with a pilot customer. Next time: a smaller scope in front of real users much sooner.</li>
+              <li><strong>Enforce lint and translation checks in CI from day one.</strong> Both are cheap at the start and expensive to clean up later.</li>
+              <li><strong>Authenticate WebSockets during the HTTP upgrade,</strong> before the connection is accepted, instead of after.</li>
+              <li><strong>Generate the API client from the OpenAPI spec</strong> instead of maintaining hand-written calls in each client.</li>
+              <li><strong>Keep deployment configuration as code,</strong> including proxy settings, so hosted environments are reproducible and reviewed like the rest of the code.</li>
+            </ul>
+          </section>
+
+          <section class="cs-block" id="access">
+            <h2>Code and demo</h2>
             <p>
-              A maintainable codebase with clear module boundaries, typed clients, and delivery habits (Git, CI, review)
-              that match how I would work in a product team.
+              The repository is private. It includes a recovery guide that rebuilds the whole system locally, the archived test results and the known-issues log.
+              I'm happy to walk through the code, the architecture and a local demo in an interview.
             </p>
-            <p class="cs-note">
-              Code and live access are private. I can walk through architecture, screenshots and technical decisions in an interview or call.
-            </p>
+            <p class="cs-note">Demo and code walkthrough available on request.</p>
           </section>
 
         </article>
@@ -190,32 +345,49 @@
             <h3>At a glance</h3>
             <dl class="cs-meta">
               <div><dt>Role</dt><dd>Sole developer</dd></div>
-              <div><dt>Scope</dt><dd>Web · API · Mobile · CI</dd></div>
-              <div><dt>Status</dt><dd>Production · Private</dd></div>
-              <div><dt>Languages</dt><dd>DE · EN · ES</dd></div>
+              <div><dt>Type</dt><dd>Personal project</dd></div>
+              <div><dt>Period</dt><dd>2025–2026</dd></div>
+              <div><dt>Status</dt><dd>Archived before production</dd></div>
+              <div><dt>Apps</dt><dd>Web · Mobile · API</dd></div>
+              <div><dt>Languages</dt><dd>ES · DE · EN</dd></div>
             </dl>
           </div>
           <div class="cs-sidebar-card">
-            <h3>Production stack</h3>
+            <h3>Stack</h3>
             <ul class="stack-tags stack-tags-sm cs-sidebar-tags">
-              <li>React</li><li>TypeScript</li><li>Node.js</li><li>Express</li>
-              <li>MongoDB</li><li>JWT</li><li>React Native</li><li>Expo</li>
+              <li>TypeScript</li><li>React</li><li>Vite</li><li>Tailwind</li>
+              <li>React Native</li><li>Expo</li><li>Node.js</li><li>Express</li>
+              <li>MongoDB</li><li>Zod</li><li>JWT</li><li>WebSocket</li>
             </ul>
           </div>
           <div class="cs-sidebar-card">
-            <h3>Delivery</h3>
+            <h3>Quality &amp; delivery</h3>
             <ul class="stack-tags stack-tags-sm cs-sidebar-tags">
-              <li>Git</li><li>GitHub Actions</li><li>Docker</li>
+              <li>Jest</li><li>Supertest</li><li>Vitest</li><li>Testing Library</li>
+              <li>GitHub Actions</li><li>Gitleaks</li><li>OpenAPI</li>
             </ul>
           </div>
+          <nav class="cs-sidebar-card cs-toc" aria-label="On this page">
+            <h3>On this page</h3>
+            <ul>
+              <li><a href="#architecture">Architecture</a></li>
+              <li><a href="#multi-tenancy">Multi-tenancy</a></li>
+              <li><a href="#security">Security</a></li>
+              <li><a href="#testing">Testing and CI</a></li>
+              <li><a href="#decisions">Decisions and trade-offs</a></li>
+              <li><a href="#debt">Known technical debt</a></li>
+              <li><a href="#differently">What I would do differently</a></li>
+            </ul>
+          </nav>
         </aside>
       </div>
 
       <div class="cs-actions">
         <a href="index.html#contacto" class="btn btn-primary btn-project">
-          <span>Request overview</span>
+          <span>Ask for a walkthrough</span>
           <svg class="btn-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </a>
+        <a href="cv/antonio-ruiz-brocal-cv.html" class="btn btn-secondary btn-project">View CV</a>
         <a href="index.html#proyectos" class="btn btn-secondary btn-project">Back to portfolio</a>
       </div>
 

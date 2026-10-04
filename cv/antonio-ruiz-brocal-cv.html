@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Antonio Ruiz Brocal — CV</title>
+  <meta name="description" content="CV of Antonio Ruiz Brocal — full-stack developer in Berlin (TypeScript, React, Node.js, React Native), EMS background.">
+  <link rel="canonical" href="https://antonioruizdeveloper.com/cv/antonio-ruiz-brocal-cv.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../favicon.ico" sizes="32x32">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -229,11 +233,10 @@
     <header>
       <div>
         <h1>Antonio Ruiz Brocal</h1>
-        <p class="headline">Full-Stack Developer · Berlin</p>
+        <p class="headline">Full-Stack Developer · TypeScript · React · Node.js</p>
       </div>
       <div class="contact">
-        <div>antonioruizbrocal@gmail.com</div>
-        <div>+49 163 700 1320</div>
+        <div><a href="mailto:antonioruizbrocal@gmail.com">antonioruizbrocal@gmail.com</a></div>
         <div>Berlin, Germany · EU work authorized</div>
         <div><a href="https://antonioruizdeveloper.com">antonioruizdeveloper.com</a></div>
         <div><a href="https://www.linkedin.com/in/antonio-ruiz-brocal-59b656294">LinkedIn</a> · <a href="https://github.com/Brocal82">GitHub</a></div>
@@ -241,9 +244,10 @@
     </header>
 
     <p class="summary">
-      Full-stack developer with <strong>3+ years</strong> of hands-on experience in React, TypeScript and Node.js.
-      Currently working in <strong>Emergency Medical Services (EMS) in Berlin</strong> while shipping production software — including a B2B platform for ambulance operations built end to end (web, mobile, API).
-      Seeking junior–mid developer roles, contracts or freelance work in healthtech, B2B SaaS and operations software. Remote, hybrid or on-site in the EU.
+      Full-stack developer in Berlin, building software since 2023 with <strong>TypeScript, React, Node.js and React Native</strong>.
+      Designed and built <strong>Ambulancias GoRuiz</strong> as a personal project: a multi-tenant platform for ambulance operations with a web panel,
+      an Expo mobile app and a tested Node.js/MongoDB API.
+      Professional background in Emergency Medical Services (EMS). Looking for a full-time developer role — remote, hybrid or on-site in the EU.
     </p>
 
     <div class="grid">
@@ -251,16 +255,24 @@
         <section>
           <h2>Skills</h2>
           <div class="skill-group">
-            <strong>Production</strong>
-            <span>React · TypeScript · JavaScript · Node.js · Express · REST · MongoDB · JWT · React Native · Expo · HTML · CSS · Git</span>
+            <strong>Languages &amp; frameworks</strong>
+            <span>TypeScript · JavaScript · React · React Native · Expo · Node.js · Express · HTML · CSS · Tailwind CSS</span>
           </div>
           <div class="skill-group">
-            <strong>Delivery &amp; quality</strong>
-            <span>GitHub Actions · Docker · Automated tests · Playwright · Code review · Multi-tenant patterns</span>
+            <strong>Data &amp; APIs</strong>
+            <span>MongoDB / Mongoose · REST · WebSocket · OpenAPI · Zod</span>
           </div>
           <div class="skill-group">
-            <strong>Dev workflow</strong>
-            <span>Cursor · Claude · Codex · MCPs · Agent skills — always reviewed before merge</span>
+            <strong>Security</strong>
+            <span>JWT · role-based access · TOTP MFA · multi-tenant isolation</span>
+          </div>
+          <div class="skill-group">
+            <strong>Testing &amp; delivery</strong>
+            <span>Jest · Supertest · Vitest · Testing Library · GitHub Actions · Gitleaks · Git</span>
+          </div>
+          <div class="skill-group">
+            <strong>Workflow</strong>
+            <span>AI-assisted tools (Cursor, Claude, Codex) — every change reviewed</span>
           </div>
         </section>
 
@@ -306,31 +318,21 @@
           <div class="project">
             <div class="project-head">
               <strong>Ambulancias GoRuiz</strong>
-              <span class="when">2023 – present · Production</span>
+              <span class="when">2025 – 2026 · Personal project</span>
             </div>
-            <p class="org">Sole developer · B2B platform for ambulance companies (private)</p>
+            <p class="org">Sole developer · Multi-tenant platform for ambulance companies · archived before production</p>
             <ul>
-              <li>Built admin web app, worker web portal and <strong>React Native (Expo)</strong> app for field staff — scheduling, documents, messaging.</li>
-              <li>Designed REST API with <strong>JWT auth</strong>, role-based access and <strong>multi-tenant</strong> company scoping; multilingual UI (ES / DE / EN).</li>
-              <li>Delivery pipeline with <strong>Git, GitHub Actions and Docker</strong> for CI; focus on maintainable code for a small team.</li>
+              <li>Designed and built a web panel (<strong>React 19, Vite, Tailwind</strong>) for admins and superadmin, including worker views, and an <strong>Expo / React Native</strong> app for field crews — shift planning, workday and trips, absences, documents, payslips and bonuses.</li>
+              <li>Built a <strong>Node.js / Express / TypeScript</strong> API on MongoDB: tenant isolation enforced in the service layer, JWT with token versioning, role-based access, <strong>TOTP MFA and step-up</strong> re-authentication, authenticated file access and WebSocket refresh events.</li>
+              <li><strong>893 backend tests</strong> (integration tests on a real MongoDB) and <strong>432 frontend tests</strong>; CI with a tenant-isolation suite, smoke test and Gitleaks secret scanning; OpenAPI 3 spec with 95 operations.</li>
+              <li>Reached an advanced functional stage; deliberately archived before production deployment, with a recovery guide and documented technical debt.</li>
             </ul>
-            <p class="project-note">Overview available on request · antonioruizdeveloper.com</p>
+            <p class="project-note">Case study: antonioruizdeveloper.com/goruiz-case-study.html · code walkthrough on request</p>
           </div>
         </section>
 
         <section>
           <h2>Professional experience</h2>
-          <div class="job">
-            <div class="job-head">
-              <strong>Web Developer</strong>
-              <span class="when">2023 – present</span>
-            </div>
-            <p class="org">Independent · Berlin, Germany</p>
-            <ul>
-              <li>Sole developer of <strong>Ambulancias GoRuiz</strong>, a production B2B platform for ambulance operations (admin web, worker portal, React Native app, Node.js API).</li>
-              <li>Applied domain knowledge from daily EMS operations to product design: shift planning, worker data, documents and field access.</li>
-            </ul>
-          </div>
           <div class="job">
             <div class="job-head">
               <strong>Rettungssanitäter · Emergency Medical Services (EMS)</strong>
@@ -339,7 +341,8 @@
             <p class="org">Ambulance services · Berlin, Germany &amp; Murcia, Spain</p>
             <ul>
               <li>Patient assessment, emergency care and transport under time pressure; clear communication with hospital teams and non-clinical staff.</li>
-              <li>Applied protocols consistently in high-stakes environments — transferable to reliable software delivery and incident handling.</li>
+              <li>Work to protocols in high-stakes situations and hand over cases clearly — habits I bring to incident handling and code review.</li>
+              <li>Day-to-day knowledge of ambulance operations (rosters, crews, vehicles, documentation) that shaped the GoRuiz domain model.</li>
             </ul>
           </div>
         </section>
@@ -349,14 +352,14 @@
           <div class="project">
             <div class="project-head">
               <strong>Product Manager</strong>
-              <span class="when">Demo project</span>
+              <span class="when">2024 · Learning project</span>
             </div>
-            <p class="org">React · TypeScript · REST API · github.com/Brocal82</p>
+            <p class="org">React · TypeScript · Express · Sequelize · github.com/Brocal82</p>
             <ul>
-              <li>Full-stack CRUD app with typed frontend and Node/Express backend; deployed demo on Vercel.</li>
+              <li>Full-stack CRUD app: typed React SPA with React Router and Tailwind CSS, and a Node/Express REST API with Sequelize.</li>
             </ul>
           </div>
-          <p class="project-note">Earlier learning projects (MyFlix, chat app) and code samples on GitHub.</p>
+          <p class="project-note">CareerFoundry projects (2023) and other code samples on GitHub.</p>
         </section>
       </main>
     </div>
