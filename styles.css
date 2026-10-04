@@ -812,6 +812,23 @@ p {
   margin-inline: auto;
 }
 
+.showcase-row-mixed {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  /* 0.304fr makes the phone screenshot (540x1110) as tall as the 16:10 web screenshots */
+  .showcase-row-mixed {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 0.304fr);
+    align-items: start;
+    gap: 1.25rem;
+  }
+
+  .showcase-row-mixed .showcase-frame-mobile {
+    max-width: none;
+  }
+}
+
 .showcase-item {
   margin: 0;
   display: flex;
@@ -833,7 +850,7 @@ p {
 }
 
 .showcase-frame-mobile {
-  aspect-ratio: 9 / 19.5;
+  aspect-ratio: 540 / 1110;
   max-width: 11rem;
   margin-inline: auto;
   border-radius: 0.75rem;
@@ -1767,7 +1784,7 @@ p {
   box-shadow: var(--shadow-md);
   overflow: hidden;
   background: var(--color-bg-alt);
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 16 / 10;
 }
 
 .cs-preview-frame img {
@@ -2255,6 +2272,10 @@ html.reveal-ready .reveal.is-visible {
 :focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 2px;
+}
+
+.nowrap {
+  white-space: nowrap;
 }
 
 .skip-link {
